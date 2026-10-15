@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CalculatorsSuite from '../components/CalculatorsSuite.tsx';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+<BaseLayout
+  title="Quant Calculators — Artha Atlas"
+  description="Client-side financial calculators for Indian investors: SIP & SWP compounding, post-tax net yield vs Bank FD, Home Loan prepayment vs equity SIP, and CAGR / XIRR hand-testers."
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <Breadcrumbs items={[{ label: 'Quant Calculators' }]} />
+
+    <div class="my-6 pb-6 border-b border-stone-200 dark:border-stone-800">
+      <div class="inline-flex items-center space-x-2 text-xs font-mono font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/60 border border-amber-200 dark:border-amber-900 px-3 py-1 rounded-full mb-3">
+        <span>🧮 100% Client-Side Privacy</span>
+        <span>•</span>
+        <span>Zero Data Leaves Your Browser</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-serif font-bold text-stone-900 dark:text-stone-50 tracking-tight leading-tight">
+        Financial Quant Calculators
+      </h1>
+      <p class="text-base sm:text-lg text-stone-600 dark:text-stone-300 max-w-4xl mt-3 font-sans leading-relaxed">
+        Mathematically rigorous tools configured for Indian tax slabs (FY 2026-27), loan amortization dynamics, and compounding schedules.
+      </p>
+    </div>
+
+    <CalculatorsSuite client:only="react" />
+  </div>
+</BaseLayout>

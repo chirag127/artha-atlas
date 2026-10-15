@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+
+const booksData = JSON.parse(fs.readFileSync(path.resolve('./src/data/books.json'), 'utf8'));
+const categories = Array.from(new Set(booksData.map((b: any) => b.category)));
+---
+<BaseLayout
+  title="Curated Indian Financial Library — Artha Atlas"
+  description="Essential reading library for Indian market practitioners: Indian market histories, forensic accounting, quantitative asset pricing, behavioral finance, and classical texts."
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <Breadcrumbs items={[{ label: 'Curated Financial Library' }]} />
+
+    <header class="my-6 pb-6 border-b border-stone-200 dark:border-stone-800">
+      <div class="inline-flex items-center space-x-2 text-xs font-mono font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/60 border border-amber-200 dark:border-amber-900 px-3 py-1 rounded-full mb-3">
+        <span>📚 Verified Literature</span>
+        <span>•</span>
+        <span>Categorized by Subject</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-serif font-bold text-stone-900 dark:text-stone-50 tracking-tight leading-tight">
+        The Indian Investor's Library
+      </h1>
+      <p class="text-base sm:text-lg text-stone-600 dark:text-stone-300 max-w-4xl mt-3 font-sans leading-relaxed">
+        Reading great literature saves you decades of expensive tuition paid to Mr. Market. Below are verified, authoritative titles categorized by subject.
+      </p>
+    </header>
+
+    <div class="space-y-12">
+      {categories.map((cat) => {
+        const catBooks = booksData.filter((b: any) => b.category === cat);
+        return (
+          <section class="space-y-4">
+            <h2 class="text-xl sm:text-2xl font-serif font-bold text-stone-900 dark:text-stone-100 pb-2 border-b border-stone-200 dark:border-stone-800">
+              {cat}
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {catBooks.map((book: any) => (
+                <div class="p-5 rounded-xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 shadow-xs flex flex-col justify-between space-y-4">
+                  <div>
+                    <div class="flex items-center justify-between text-[11px] text-stone-500 mb-1">
+                      <span>{book.authors.join(', ')}</span>
+                      <span class="font-mono">{book.year}</span>
+                    </div>
+                    <h3 class="font-serif font-bold text-base text-stone-900 dark:text-stone-100">
+                      {book.title}
+                    </h3>
+                    <div class="text-[11px] text-amber-600 font-mono mt-0.5">
+                      Level: {book.level}
+                    </div>
+                    <p class="text-xs text-stone-600 dark:text-stone-400 mt-2 leading-relaxed">
+                      {book.whyItMatters}
+                    </p>
+                    <div class="mt-3 pt-3 border-t border-stone-100 dark:border-stone-800">
+                      <div class="text-[10px] font-semibold uppercase tracking-wider text-stone-500 mb-1">
+                        Key Insights:
+                      </div>
+                      <ul class="list-disc list-inside text-[11px] text-stone-600 dark:text-stone-400 space-y-0.5">
+                        {book.keyTakeaways.map((point: string) => (
+                          <li>{point}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="pt-2 text-right">
+                    <a
+                      href={book.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-xs text-amber-600 hover:underline font-medium"
+                    >
+                      View on Amazon / Publisher ↗
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        );
+      })}
+    </div>
+  </div>
+</BaseLayout>

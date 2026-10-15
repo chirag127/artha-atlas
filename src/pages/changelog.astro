@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+<BaseLayout
+  title="Regulatory & Content Changelog — Artha Atlas"
+  description="Audit log of statutory updates, tax amendments, and verification dates across all Artha Atlas articles."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <Breadcrumbs items={[{ label: 'Changelog & Verification Audit' }]} />
+
+    <header class="my-6 pb-6 border-b border-stone-200 dark:border-stone-800">
+      <h1 class="text-3xl sm:text-4xl font-serif font-bold text-stone-900 dark:text-stone-50 tracking-tight">
+        Regulatory & Content Audit Log
+      </h1>
+      <p class="text-sm text-stone-600 dark:text-stone-400 mt-2">
+        Tracking statutory updates from SEBI circulars, RBI Master Directions, and Income-tax Act revisions.
+      </p>
+    </header>
+
+    <div class="space-y-6 text-xs sm:text-sm">
+      <div class="p-5 rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 space-y-2">
+        <div class="flex items-center justify-between text-stone-500 font-mono text-xs">
+          <span>Date: 2026-10-15</span>
+          <span class="px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950/70 text-emerald-800 dark:text-emerald-300 font-semibold">Verified</span>
+        </div>
+        <h2 class="font-serif font-bold text-base text-stone-900 dark:text-stone-100">
+          Full Atlas Comprehensive Verification (FY 2026-27 Tax & Regulatory Baseline)
+        </h2>
+        <ul class="list-disc list-inside space-y-1 text-stone-600 dark:text-stone-400">
+          <li>Verified listed equity LTCG at 12.5% with ₹1.25 Lakhs annual exemption under Section 112A.</li>
+          <li>Confirmed Section 50AA treatment of specified debt mutual funds (taxed at slab rate).</li>
+          <li>Audited SEBI SM REIT amendments and fractional ownership regulations.</li>
+          <li>Refreshed RBI Retail Direct G-Sec auction mechanisms and NDS-OM retail access.</li>
+          <li>Validated BUDS Act 2019 legal case studies and SEBI SCORES 2.0 turnaround timelines.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

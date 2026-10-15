@@ -1,0 +1,56 @@
+---
+// ReadingModeToggle.astro
+---
+<div class="inline-flex rounded-lg border border-stone-200 dark:border-stone-700 p-0.5 bg-stone-100 dark:bg-stone-800 text-xs font-medium">
+  <button
+    id="reading-mode-standard"
+    type="button"
+    class="px-2.5 py-1 rounded-md transition-all text-stone-700 dark:text-stone-300"
+    title="Standard reading experience with helpful explanations"
+  >
+    Standard
+  </button>
+  <button
+    id="reading-mode-advanced"
+    type="button"
+    class="px-2.5 py-1 rounded-md transition-all text-stone-700 dark:text-stone-300"
+    title="Advanced quant formulas and regulatory subsections"
+  >
+    Quant / Deep
+  </button>
+</div>
+
+<script is:inline>
+  function updateReadingModeUI(mode) {
+    const btnStd = document.getElementById('reading-mode-standard');
+    const btnAdv = document.getElementById('reading-mode-advanced');
+    if (!btnStd || !btnAdv) return;
+
+    if (mode === 'advanced') {
+      btnAdv.classList.add('bg-amber-600', 'text-white', 'shadow-sm');
+      btnAdv.classList.remove('text-stone-700', 'dark:text-stone-300');
+      btnStd.classList.remove('bg-amber-600', 'text-white', 'shadow-sm');
+      btnStd.classList.add('text-stone-700', 'dark:text-stone-300');
+      document.body.classList.add('mode-advanced');
+    } else {
+      btnStd.classList.add('bg-amber-600', 'text-white', 'shadow-sm');
+      btnStd.classList.remove('text-stone-700', 'dark:text-stone-300');
+      btnAdv.classList.remove('bg-amber-600', 'text-white', 'shadow-sm');
+      btnAdv.classList.add('text-stone-700', 'dark:text-stone-300');
+      document.body.classList.remove('mode-advanced');
+    }
+  }
+
+  const currentMode = localStorage.getItem('reading-mode') || 'standard';
+  updateReadingModeUI(currentMode);
+
+  document.getElementById('reading-mode-standard')?.addEventListener('click', () => {
+    localStorage.setItem('reading-mode', 'standard');
+    updateReadingModeUI('standard');
+  });
+
+  document.getElementById('reading-mode-advanced')?.addEventListener('click', () => {
+    localStorage.setItem('reading-mode', 'advanced');
+    updateReadingModeUI('advanced');
+  });
+</script>

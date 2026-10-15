@@ -1,0 +1,178 @@
+[
+  {
+    "term": "XIRR (Extended Internal Rate of Return)",
+    "category": "Quant & Mathematics",
+    "definition": "A mathematical method used to calculate the annualized return on investments with multiple irregular cash inflows and outflows over varying time periods.",
+    "formula": "\\sum_{i=1}^{n} \\frac{C_i}{(1 + \\text{XIRR})^{\\frac{d_i - d_1}{365}}} = 0",
+    "whyItMatters": "Standard CAGR fails when evaluating SIPs or irregular investments. XIRR is the only accurate measure for Indian mutual fund portfolios with multiple purchase dates.",
+    "tags": ["Math", "SIP", "Returns"]
+  },
+  {
+    "term": "CAGR (Compound Annual Growth Rate)",
+    "category": "Quant & Mathematics",
+    "definition": "The geometric progression ratio that provides a constant annual rate of return over a multi-year compounding period, smoothing out year-over-year market volatility.",
+    "formula": "\\text{CAGR} = \\left( \\frac{\\text{End Value}}{\\text{Start Value}} \\right)^{\\frac{1}{n}} - 1",
+    "whyItMatters": "Used for single lump sum investments to compare multi-year asset performance across equities, debt, gold, and real estate.",
+    "tags": ["Math", "Returns"]
+  },
+  {
+    "term": "Real Rate of Return (Fisher Equation)",
+    "category": "Quant & Mathematics",
+    "definition": "The annual rate of return adjusted for the eroding effects of inflation, reflecting the true growth in purchasing power.",
+    "formula": "1 + r_{\\text{real}} = \\frac{1 + r_{\\text{nominal}}}{1 + i} \\implies r_{\\text{real}} \\approx r_{\\text{nominal}} - i",
+    "whyItMatters": "In India where consumer price inflation averages 5-7%, an 8% fixed deposit yield actually produces a negligible real return of ~1% post-tax.",
+    "tags": ["Math", "Inflation", "Tax"]
+  },
+  {
+    "term": "Modified Duration",
+    "category": "Fixed Income",
+    "definition": "A formula that expresses the measurable change in the value of a bond or debt security in response to a 100 basis point (1%) change in interest rates.",
+    "formula": "\\text{ModDuration} = \\frac{\\text{Macaulay Duration}}{1 + \\frac{YTM}{m}}",
+    "whyItMatters": "If a G-Sec bond fund has a modified duration of 7 years, a 1% hike in RBI repo rates leads to approximately a 7% capital loss in the fund's NAV.",
+    "tags": ["Debt", "Bonds", "RBI"]
+  },
+  {
+    "term": "YTM (Yield to Maturity)",
+    "category": "Fixed Income",
+    "definition": "The total anticipated return on a bond if the bond is held until it matures, assuming all coupon payments are reinvested at the same rate.",
+    "formula": "P = \\sum_{t=1}^{T} \\frac{C}{(1 + \\text{YTM})^t} + \\frac{F}{(1 + \\text{YTM})^T}",
+    "whyItMatters": "Indicates the internal rate of return of a bond portfolio; crucial when evaluating Target Maturity Funds (TMFs) and corporate NCDs.",
+    "tags": ["Debt", "Bonds"]
+  },
+  {
+    "term": "LTCG (Long-Term Capital Gains - Equity)",
+    "category": "Taxation",
+    "definition": "Tax levied on profits from the sale of listed equity shares or equity-oriented mutual funds held for longer than 12 months.",
+    "formula": "\\text{Tax} = 12.5\\% \\times \\max(0, \\text{LTCG} - ₹1,25,000)",
+    "whyItMatters": "Under current Indian tax provisions, LTCG on listed equities is taxed at 12.5% for gains exceeding the annual threshold of ₹1.25 Lakhs without indexation.",
+    "tags": ["Tax", "Equity", "Mutual Funds"]
+  },
+  {
+    "term": "STCG (Short-Term Capital Gains - Equity)",
+    "category": "Taxation",
+    "definition": "Tax levied on profits from the sale of listed equity shares or units of an equity mutual fund held for 12 months or less.",
+    "formula": "\\text{Tax} = 20\\% \\times \\text{STCG}",
+    "whyItMatters": "Subject to Section 111A at a flat rate of 20% (plus applicable surcharge and cess). Short-term trading carries significant tax friction.",
+    "tags": ["Tax", "Equity"]
+  },
+  {
+    "term": "Section 50AA (Debt Fund Taxation)",
+    "category": "Taxation",
+    "definition": "Special provision in the Indian Income-tax Act deeming capital gains from specified mutual funds (investing less than 35% in domestic equities) as short-term capital gains taxed at individual slab rates.",
+    "formula": "\\text{Tax} = \\text{Gain} \\times \\text{Marginal Slab Rate}",
+    "whyItMatters": "Eliminated the historical 3-year indexation benefit on debt funds for purchases made on or after April 1, 2023, leveling the playing field with bank FDs.",
+    "tags": ["Tax", "Debt", "Mutual Funds"]
+  },
+  {
+    "term": "TER (Total Expense Ratio)",
+    "category": "Mutual Funds",
+    "definition": "The annual percentage fee charged by an Asset Management Company (AMC) to cover operating, administrative, management, and distributor commission costs.",
+    "formula": "\\text{Value}_{T} = \\text{Principal} \\times (1 + r - \\text{TER})^T",
+    "whyItMatters": "Regular mutual fund plans carry an extra 0.5% - 1.2% distributor commission compared to Direct plans. Over a 25-year horizon, this commission drag can consume 20-30% of total accumulated wealth.",
+    "tags": ["Mutual Funds", "Math", "Costs"]
+  },
+  {
+    "term": "Sharpe Ratio",
+    "category": "Quant & Risk",
+    "definition": "A mathematical metric evaluating the excess return generated by an investment portfolio per unit of total risk (standard deviation) above the risk-free rate.",
+    "formula": "\\text{Sharpe} = \\frac{R_p - R_f}{\\sigma_p}",
+    "whyItMatters": "A high CAGR is meaningless if achieved with stomach-churning volatility. In India, $R_f$ is typically proxied by the 91-day T-Bill rate (~6.5%).",
+    "tags": ["Risk", "Quant", "Math"]
+  },
+  {
+    "term": "Sortino Ratio",
+    "category": "Quant & Risk",
+    "definition": "A variation of the Sharpe ratio that penalizes only downside volatility (negative returns) rather than total volatility, recognizing that upside volatility is beneficial to investors.",
+    "formula": "\\text{Sortino} = \\frac{R_p - R_f}{\\sigma_d}",
+    "whyItMatters": "Superior to Sharpe for analyzing aggressive equity funds, small-cap funds, and PMS strategies with asymmetric upside.",
+    "tags": ["Risk", "Quant"]
+  },
+  {
+    "term": "Maximum Drawdown (MDD)",
+    "category": "Quant & Risk",
+    "definition": "The maximum observed percentage loss from a historical peak to a subsequent trough of a portfolio before a new peak is attained.",
+    "formula": "\\text{MDD} = \\frac{\\text{Trough Value} - \\text{Peak Value}}{\\text{Peak Value}}",
+    "whyItMatters": "Measures pain tolerance. For example, Indian small caps suffered a ~70% drawdown during the 2008 global financial crisis and took 6 years to recover.",
+    "tags": ["Risk", "Equity"]
+  },
+  {
+    "term": "REIT (Real Estate Investment Trust)",
+    "category": "Real Estate",
+    "definition": "A SEBI-regulated investment vehicle that owns, operates, or finances income-generating commercial real estate, trading on stock exchanges like equity shares.",
+    "formula": "\\text{Total Return} = \\text{Distribution Yield} + \\text{Capital Appreciation}",
+    "whyItMatters": "Allows retail investors to participate in prime grade-A Indian commercial office parks with a minimum ticket size of ~₹300-400 and quarterly cash flow distributions.",
+    "tags": ["Real Estate", "SEBI", "Dividends"]
+  },
+  {
+    "term": "SM REIT (Small & Medium REIT)",
+    "category": "Real Estate",
+    "definition": "A specialized sub-framework introduced by SEBI to regulate fractional ownership platforms (FOPs) holding real estate assets valued between ₹50 Crore and ₹500 Crore.",
+    "formula": "\\text{Min Ticket} = ₹10,00,000",
+    "whyItMatters": "Brings institutional investor protection, escrow controls, and mandatory SEBI disclosure standards to fractional property investments.",
+    "tags": ["Real Estate", "SEBI", "High-Ticket"]
+  },
+  {
+    "term": "AIF (Alternative Investment Fund)",
+    "category": "Alternatives",
+    "definition": "A privately pooled investment vehicle regulated by SEBI under AIF Regulations 2012, divided into Category I (Venture Capital, Angel, Social), Category II (Private Equity, Private Credit, Real Estate), and Category III (Hedge Funds, Long-Short).",
+    "formula": "\\text{Min Ticket} = ₹1,00,00,000 \\text{ (₹25 Lakhs for Accredited Investors/Angel)}",
+    "whyItMatters": "Offers high-net-worth investors access to unlisted securities, venture debt, and quantitative derivative strategies not permissible in standard retail mutual funds.",
+    "tags": ["Alternatives", "SEBI", "HNIs"]
+  },
+  {
+    "term": "PMS (Portfolio Management Services)",
+    "category": "Alternatives",
+    "definition": "A discretionary or non-discretionary portfolio management offering regulated by SEBI where securities are held directly in the client's own demat account rather than a collective pool.",
+    "formula": "\\text{Min Ticket} = ₹50,00,000",
+    "whyItMatters": "Unlike mutual funds where portfolio turnover inside the scheme is non-taxable, every buy and sell transaction in a PMS triggers an immediate capital gains tax event for the investor.",
+    "tags": ["Alternatives", "SEBI", "Tax"]
+  },
+  {
+    "term": "Sovereign Gold Bond (SGB)",
+    "category": "Gold & Silver",
+    "definition": "Government securities denominated in grams of gold issued by the RBI on behalf of the Government of India, offering a 2.50% annual coupon and sovereign capital guarantee pegged to the price of 999 purity gold.",
+    "formula": "\\text{Tax on Maturity Redemption} = 0\\%",
+    "whyItMatters": "The single most tax-efficient gold vehicle in Indian history. While fresh sovereign tranches have slowed, existing tranches actively trade on the secondary market of NSE and BSE.",
+    "tags": ["Gold", "RBI", "Tax"]
+  },
+  {
+    "term": "BUDS Act 2019",
+    "category": "Legal & Fraud",
+    "definition": "The Banning of Unregulated Deposit Schemes Act, 2019, which completely prohibits and criminalizes any deposit-taking scheme not explicitly registered with designated financial regulators (RBI, SEBI, IRDAI, PFRDA, MCA).",
+    "formula": "\\text{Penalty} = 1 \\text{ to } 10 \\text{ Years Rigorous Imprisonment}",
+    "whyItMatters": "The primary federal legal weapon against chit-fund operators, Ponzi schemes, unregistered real estate monthly return schemes, and illegal collective investment syndicates.",
+    "tags": ["Law", "Fraud", "Regulators"]
+  },
+  {
+    "term": "SEBI SCORES 2.0",
+    "category": "Legal & Regulators",
+    "definition": "The SEBI Complaints Redress System (version 2.0), an online automated portal enabling retail investors to file formal regulatory complaints against listed companies, brokers, AMCs, depositories, and registered intermediaries with strict escalation timelines.",
+    "formula": "\\text{Turnaround} = 21 \\text{ Calendar Days}",
+    "whyItMatters": "If an AMC, broker, or registrar fails to resolve your grievance within 21 days, the complaint automatically escalates to designated SEBI supervisory officers or SMART ODR arbitration.",
+    "tags": ["SEBI", "Consumer Protection"]
+  },
+  {
+    "term": "Safe Withdrawal Rate (SWR)",
+    "category": "Personal Finance & FIRE",
+    "definition": "The percentage of an accumulated retirement nest egg that an individual can withdraw annually, adjusted for inflation, without exhausting the portfolio over a 30-to-40 year retirement horizon.",
+    "formula": "\\text{Annual Withdrawal}_t = \\text{Portfolio}_0 \\times \\text{SWR} \\times \\prod_{k=1}^t (1 + i_k)",
+    "whyItMatters": "While the US Trinity Study suggests a 4% rule, Indian retirees face 6-7% inflation, healthcare hyperinflation, and high equity volatility, necessitating a more conservative SWR of 2.75% - 3.25% in India.",
+    "tags": ["FIRE", "Retirement", "Math"]
+  },
+  {
+    "term": "Sequence of Returns Risk (SRR)",
+    "category": "Personal Finance & FIRE",
+    "definition": "The risk that the timing of market downturns during the early stages of retirement withdrawals will permanently deplete a portfolio, even if the long-term average market return remains high.",
+    "formula": "\\text{Impact} = \\text{Early Capital Withdrawals during Market Drawdowns permanently impair compounding}",
+    "whyItMatters": "A retiree who experiences a 30% equity crash in year 1 of retirement while liquidating for living expenses faces a catastrophic risk of portfolio depletion.",
+    "tags": ["FIRE", "Risk", "Math"]
+  },
+  {
+    "term": "VDA (Virtual Digital Assets - Section 115BBH)",
+    "category": "Taxation",
+    "definition": "The Indian statutory classification covering cryptocurrencies, non-fungible tokens (NFTs), and cryptographic tokens under the Income-tax Act.",
+    "formula": "\\text{Tax} = 30\\% \\times \\text{Profit} + 4\\% \\text{Cess} + 1\\% \\text{TDS (Section 194S)}",
+    "whyItMatters": "Carries the most restrictive tax rules: no deductions except cost of acquisition, no loss set-off against other crypto pairs or ordinary income, and mandatory 1% TDS on every transaction.",
+    "tags": ["Tax", "Crypto", "Law"]
+  }
+]

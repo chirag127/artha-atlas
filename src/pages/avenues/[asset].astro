@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Callout from '../../components/Callout.astro';
+import fs from 'node:fs';
+import yaml from 'js-yaml';
+import path from 'node:path';
+
+export async function getStaticPaths() {
+  const file = fs.readFileSync(path.resolve('./src/data/avenues.yaml'), 'utf8');
+  const avenues = yaml.load(file) as any[];
+
+  return avenues.map((avenue) => ({
+    params: { asset: avenue.id },
+    props: { avenue },
+  }));
+}
+
+const { avenue } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<BaseLayout
+  title={`${avenue.name} — Indian Avenues Breakdown — Artha Atlas`}
+  description={`Detailed analysis of ${avenue.name}: regulated by ${avenue.regulator}, historical returns, real yields, risk tier, and current taxation.`}
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <Breadcrumbs
+      items={[
+        { label: 'Avenues', href: `${base}/avenues/` },
+        { label: avenue.category, href: `${base}/avenues/` },
+        { label: avenue.name },
+      ]}
+    />
+
+    <header class="my-6 pb-6 border-b border-stone-200 dark:border-stone-800">
+      <div class="flex items-center space-x-2 text-xs font-mono font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/60 border border-amber-200 dark:border-amber-900 px-3 py-1 rounded-full mb-3 w-fit">
+        <span>🏛️ Regulated by {avenue.regulator}</span>
+        <span>•</span>
+        <span>{avenue.category}</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-serif font-bold text-stone-900 dark:text-stone-50 tracking-tight leading-tight">
+        {avenue.name}
+      </h1>
+      <p class="text-base sm:text-lg text-stone-600 dark:text-stone-300 mt-3 font-sans leading-relaxed">
+        {avenue.suitability}
+      </p>
+    </header>
+
+    <!-- Metrics Matrix Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 my-8 font-sans">
+      <div class="p-4 rounded-xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 shadow-xs">
+        <span class="text-xs text-stone-500 block">Nominal Return</span>
+        <strong class="text-base sm:text-lg text-stone-900 dark:text-stone-100 font-mono">{avenue.historicalReturn}</strong>
+      </div>
+      <div class="p-4 rounded-xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 shadow-xs">
+        <span class="text-xs text-stone-500 block">Real Return</span>
+        <strong class="text-base sm:text-lg text-emerald-600 font-mono">{avenue.expectedRealReturn}</strong>
+      </div>
+      <div class="p-4 rounded-xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 shadow-xs">
+        <span class="text-xs text-stone-500 block">Max Drawdown</span>
+        <strong class="text-base sm:text-lg text-red-600 font-mono">{avenue.maxDrawdown}</strong>
+      </div>
+      <div class="p-4 rounded-xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 shadow-xs">
+        <span class="text-xs text-stone-500 block">Minimum Ticket</span>
+        <strong class="text-base sm:text-lg text-stone-900 dark:text-stone-100 font-mono">₹{avenue.minTicket.toLocaleString('en-IN')}</strong>
+      </div>
+    </div>
+
+    <!-- Details Sections -->
+    <div class="space-y-8 text-sm sm:text-base text-stone-700 dark:text-stone-300 leading-relaxed font-sans">
+      <section class="space-y-3">
+        <h2 class="text-xl sm:text-2xl font-serif font-bold text-stone-900 dark:text-stone-100">
+          Liquidity & Lock-in Requirements
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+          <div class="p-3.5 rounded-lg bg-stone-50 dark:bg-stone-900 border border-stone-200 dark:border-stone-800">
+            <span class="text-stone-500 block">Mandatory Lock-in Duration:</span>
+            <strong class="text-sm text-stone-900 dark:text-stone-100">
+              {avenue.lockInDays === 0 ? "Zero Lock-in (Open Ended)" : `${avenue.lockInDays} Days`}
+            </strong>
+          </div>
+          <div class="p-3.5 rounded-lg bg-stone-50 dark:bg-stone-900 border border-stone-200 dark:border-stone-800">
+            <span class="text-stone-500 block">Settlement Liquidity:</span>
+            <strong class="text-sm text-stone-900 dark:text-stone-100">
+              T+{avenue.liquidityDays} Days
+            </strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="text-xl sm:text-2xl font-serif font-bold text-stone-900 dark:text-stone-100">
+          Statutory Capital Gains Taxation (FY 2026-27)
+        </h2>
+        <div class="p-4 rounded-xl bg-stone-50 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 text-xs space-y-2">
+          <div><strong>STCG Treatment:</strong> {avenue.taxation.stcg}</div>
+          <div><strong>LTCG Treatment:</strong> {avenue.taxation.ltcg}</div>
+          <div><strong>Periodic Dividends / Coupons:</strong> {avenue.taxation.dividendTax}</div>
+        </div>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="text-xl sm:text-2xl font-serif font-bold text-stone-900 dark:text-stone-100">
+          Documented Risks & Failure Modes
+        </h2>
+        <ul class="list-disc list-inside space-y-1.5 text-xs text-stone-600 dark:text-stone-400">
+          {avenue.keyRisks?.map((risk: string) => (
+            <li>{risk}</li>
+          ))}
+          <li>Credit/Counterparty Risk Rating: {avenue.creditRisk}</li>
+          <li>Fraud/Manipulation Risk Assessment: {avenue.fraudRisk}</li>
+        </ul>
+      </section>
+
+      <div class="pt-6 border-t border-stone-200 dark:border-stone-800 flex justify-between items-center text-xs">
+        <a href={`${base}/avenues/`} class="text-amber-600 hover:underline font-medium">← Back to All Avenues</a>
+        <a href={`${base}/compare/`} class="px-4 py-2 rounded-lg bg-amber-600 hover:bg-amber-700 text-white font-medium shadow-xs">
+          Compare with other avenues →
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

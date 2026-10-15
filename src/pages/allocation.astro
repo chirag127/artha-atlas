@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AllocationLab from '../components/AllocationLab.tsx';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+<BaseLayout
+  title="Asset Allocation Lab — Artha Atlas"
+  description="Interactive Indian asset allocation simulator with Monte Carlo fan charts, sequence-of-returns risk modeling, inflation discounting, and Safe Withdrawal Rates (SWR)."
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <Breadcrumbs items={[{ label: 'Asset Allocation Lab' }]} />
+
+    <div class="my-6 pb-6 border-b border-stone-200 dark:border-stone-800">
+      <div class="inline-flex items-center space-x-2 text-xs font-mono font-semibold text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-900 px-3 py-1 rounded-full mb-3">
+        <span>🔬 Quantitative Asset Allocation</span>
+        <span>•</span>
+        <span>Monte Carlo Simulation</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-serif font-bold text-stone-900 dark:text-stone-50 tracking-tight leading-tight">
+        The Asset Allocation Lab
+      </h1>
+      <p class="text-base sm:text-lg text-stone-600 dark:text-stone-300 max-w-4xl mt-3 font-sans leading-relaxed">
+        Model your portfolio across equity, fixed income, and gold. Discover how Indian consumer inflation (6%) erodes purchasing power, stress-test bear markets, and calculate your sustainable FIRE Safe Withdrawal Rate.
+      </p>
+    </div>
+
+    <AllocationLab client:only="react" />
+  </div>
+</BaseLayout>

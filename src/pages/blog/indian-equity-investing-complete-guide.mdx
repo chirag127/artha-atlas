@@ -1,0 +1,153 @@
+---
+title: "The Indian Equity Landscape: Large, Mid, Small, and Micro-Cap Realities"
+description: "The definitive empirical guide to Indian public equities: multi-cycle valuation multiples, earnings quality, survivorship bias in small caps, factor premia, and current capital gains taxation."
+series: "Series 01: Indian Equities & Factor Investing"
+seriesOrder: 1
+assetClass: ["Equity"]
+riskTier: 4
+difficulty: 3
+verifiedOn: "2026-10-15"
+---
+import PostLayout from '../../layouts/PostLayout.astro';
+import Callout from '../../components/Callout.astro';
+import Cite from '../../components/Cite.astro';
+import Mermaid from '../../components/Mermaid.astro';
+
+<PostLayout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  series={frontmatter.series}
+  seriesOrder={frontmatter.seriesOrder}
+  assetClass={frontmatter.assetClass}
+  riskTier={frontmatter.riskTier}
+  difficulty={frontmatter.difficulty}
+  verifiedOn={frontmatter.verifiedOn}
+>
+
+## 1. TL;DR & Quantitative Summary
+
+<div class="p-5 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-900/50 shadow-xs my-6 space-y-3 font-sans">
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
+    <div>
+      <span class="text-stone-500 block">Historical 15-Yr CAGR</span>
+      <strong class="text-base text-stone-900 dark:text-stone-100 font-mono">12.5% – 14.2%</strong>
+      <span class="text-[10px] text-stone-400 block">Nifty 50 TRI / Nifty 500</span>
+    </div>
+    <div>
+      <span class="text-stone-500 block">Real Return (Post-Inflation)</span>
+      <strong class="text-base text-emerald-600 font-mono">6.5% – 8.0%</strong>
+      <span class="text-[10px] text-stone-400 block">Assuming 6.0% CPI</span>
+    </div>
+    <div>
+      <span class="text-stone-500 block">Max Historical Drawdown</span>
+      <strong class="text-base text-red-600 font-mono">-55% to -65%</strong>
+      <span class="text-[10px] text-stone-400 block">2008 GFC / 2020 COVID</span>
+    </div>
+    <div>
+      <span class="text-stone-500 block">Current Capital Gains Tax</span>
+      <strong class="text-base text-amber-600 font-mono">STCG 20% | LTCG 12.5%</strong>
+      <span class="text-[10px] text-stone-400 block">Sec 111A / Sec 112A</span>
+    </div>
+  </div>
+</div>
+
+Direct public equity represents the most powerful wealth-compounding vehicle in the Indian republic, but it is simultaneously an arena of severe behavioral casualties. Over a rolling 10-year horizon, broad Indian equities have systematically outpaced consumer inflation by 600 to 750 basis points. However, the path is punctuated by gut-wrenching 30% to 55% drawdowns that purge undisciplined capital.
+
+---
+
+## 2. Market Architecture & How It Actually Works
+
+The Indian equity market is primarily transacted across two premier electronic exchanges: the **National Stock Exchange (NSE)** and the **Bombay Stock Exchange (BSE)**. Trades follow a strict **T+1 rolling settlement cycle**, supported by modern central clearing corporations (NSE Clearing Limited / Indian Clearing Corporation Limited) and electronic depositories (NSDL and CDSL).
+
+<Mermaid title="Indian Public Equity Trade & Settlement Architecture (T+1 Cycle)">
+{`flowchart TD
+    Retail["Retail Investor / Demat Account"] -->|Place Buy Order via Broker| Broker["SEBI-Registered Stock Broker"]
+    Broker -->|Route to Exchange Matching Engine| Exchange["NSE / BSE Trading Engine"]
+    Exchange -->|Execution Confirmation| CC["Clearing Corporation: NSCCL / ICCL"]
+    CC -->|T+1 Trade Pay-in / Settlement| Custody["Depositories: NSDL / CDSL"]
+    Custody -->|Securities Credited to Demat| Demat["Client Demat Account (T+1 Settlement)"]`}
+</Mermaid>
+
+Under SEBI regulations, market capitalization tiers are defined with mathematical precision:
+- **Large-Cap:** 1st to 100th company in terms of full market capitalization.
+- **Mid-Cap:** 101st to 250th company.
+- **Small-Cap:** 251st company onwards.
+- **Micro-Cap:** Generally defined as companies below the top 500, with market capitalizations typically under ₹1,500 Crores.
+
+---
+
+## 3. Statutory Regulators & Governing Law
+
+Public equities in India operate under the strictest regulatory framework in South Asia:
+- **Securities and Exchange Board of India (SEBI):** Statutory authority established under the *SEBI Act, 1992*, armed with powers of search, seizure, impounding of unlawful proceeds, and civil penalties.
+- **Securities Contracts (Regulation) Act, 1956 (SCRA):** Governs exchange recognition, listing agreements, and contract enforceability.
+- **Companies Act, 2013:** Mandates corporate governance norms, independent director duties, related-party disclosure thresholds, and internal audit mechanisms.
+
+---
+
+## 4. Historical Returns & The Survivorship Bias Reality
+
+Nominal historical returns from Indian equities often mislead because naive observers look only at the surviving index constituents.
+
+<Callout type="insight" title="The Survivorship Bias Trap in Indian Equities">
+  In 2000, during the peak of the dot-com boom, dozens of companies added "Tech" or "Software" to their names on BSE. Within 5 years, over 80% of these firms were either suspended, delisted, or trading at -99% drawdowns. The Nifty 50 and BSE Sensex periodically prune non-performing companies, replacing them with emerging winners. If you invest in individual small and micro caps without institutional forensic filtering, your unadjusted return will lag the published index indices by hundreds of basis points due to terminal business failures.
+</Callout>
+
+---
+
+## 5. Mathematical Framework & Valuation Formulas
+
+Quantitative equity valuation relies on discounted cash flow (DCF), price-to-earnings multiples (P/E), and Return on Capital Employed (ROCE).
+
+### The Gordon Growth Model
+$$P_0 = \frac{D_1}{k_e - g}$$
+Where:
+- $P_0$ is the intrinsic fair value per share.
+- $D_1$ is the anticipated dividend per share in year 1.
+- $k_e$ is the required cost of equity (calculated via CAPM: $k_e = R_f + \beta(R_m - R_f)$).
+- $g$ is the sustainable perpetual dividend growth rate.
+
+---
+
+## 6. Statutory Capital Gains Taxation (FY 2026-27)
+
+Taxation on Indian listed equity shares (where Securities Transaction Tax / STT is paid on purchase and sale) is governed by **Sections 111A and 112A** of the Income-tax Act:
+
+<Callout type="tax" title="Current Capital Gains Tax Rates (Listed Indian Equity)">
+  - **Short-Term Capital Gains (STCG - Section 111A):** 
+    Holding period $\le 12$ months: Taxed at a flat rate of **20%** (plus applicable surcharge and 4% Health & Education cess).
+  - **Long-Term Capital Gains (LTCG - Section 112A):** 
+    Holding period $> 12$ months: Taxed at **12.5%** on gains exceeding the statutory annual exemption limit of **₹1,25,000** per financial year. No indexation benefit is available.
+  - **Dividend Income:** Taxed under "Income from Other Sources" at the investor's applicable marginal income tax slab.
+</Callout>
+
+---
+
+## 7. Major Risks & Real Historical Case Studies
+
+### 1. Promoter Pledging & Fraud: The Satyam Collapse (2009)
+Ramalinga Raju admitted to falsifying company accounts with ₹5,040 Crore in non-existent cash and bank balances. The stock crashed by over 80% in a single trading session.
+
+### 2. Forensic Red Flags: Related-Party Transactions & Operator Manipulation
+Micro-cap and SME shares frequently exhibit high promoter share pledging, unearned revenue inflation through circular routing via shell LLPs, and auditor hopping. Investors must verify cash flow from operations (CFO) against reported operating EBITDA.
+
+---
+
+## 8. Portfolio Allocation Guidance
+
+| Investor Profile | Recommended Equity Range | Recommended Sub-Allocation | Horizon |
+| :--- | :--- | :--- | :--- |
+| **Conservative** | 15% – 25% | 100% Large-Cap Index / Flexi-Cap | 3–5 Years |
+| **Moderate** | 45% – 55% | 70% Large-Cap / 30% Mid-Cap | 5–7 Years |
+| **Aggressive** | 70% – 80% | 50% Large / 30% Mid / 20% Small | 7–10+ Years |
+| **Very Aggressive** | 85% – 95% | 40% Large / 35% Mid / 25% Small & Micro | 10+ Years |
+
+---
+
+## 9. Primary Sources & Further Reading
+
+1. <Cite source="SEBI Act 1992" url="https://www.sebi.gov.in" accessed="2026-10-15" /> — Securities and Exchange Board of India Act, No. 15 of 1992.
+2. <Cite source="Income Tax Dept" url="https://incometax.gov.in" accessed="2026-10-15" /> — Sections 111A, 112A, and 194 of the Income-tax Act.
+3. *Coffee Can Investing* by Saurabh Mukherjea, Rakshit Ranjan, and Pranab Uniyal (Penguin 2018).
+
+</PostLayout>

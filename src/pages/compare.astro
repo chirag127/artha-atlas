@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CompareEngine from '../components/CompareEngine.tsx';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import fs from 'node:fs';
+import yaml from 'js-yaml';
+import path from 'node:path';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const avenuesFile = fs.readFileSync(path.resolve('./src/data/avenues.yaml'), 'utf8');
+const avenues = yaml.load(avenuesFile) as any[];
+---
+<BaseLayout
+  title="Comparison Engine — Artha Atlas"
+  description="Compare all Indian investment avenues side-by-side: historical returns, real post-tax yield, maximum drawdown, lock-in, liquidity, and regulatory frameworks."
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <Breadcrumbs items={[{ label: 'Comparison Engine' }]} />
+
+    <div class="my-6 pb-6 border-b border-stone-200 dark:border-stone-800">
+      <div class="inline-flex items-center space-x-2 text-xs font-mono font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/60 border border-amber-200 dark:border-amber-900 px-3 py-1 rounded-full mb-3">
+        <span>⚖️ Single Source of Truth</span>
+        <span>•</span>
+        <span>{avenues.length} Regulated Instruments</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-serif font-bold text-stone-900 dark:text-stone-50 tracking-tight leading-tight">
+        Indian Investment Comparison Engine
+      </h1>
+      <p class="text-base sm:text-lg text-stone-600 dark:text-stone-300 max-w-4xl mt-3 font-sans leading-relaxed">
+        Select up to 6 instruments to compare metrics side-by-side, or use the multi-column sortable table to filter by risk tier, liquidity days, lock-in, and post-tax real return.
+      </p>
+    </div>
+
+    <CompareEngine client:only="react" initialAvenues={avenues} />
+  </div>
+</BaseLayout>

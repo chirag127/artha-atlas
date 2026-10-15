@@ -1,0 +1,89 @@
+---
+title: "Real Estate, REITs, and SM REITs in India: Direct Property vs Listed Real Estate"
+description: "Complete mathematical comparison of direct property vs listed REITs and SM REITs: rental yield realities, RERA legal checks, SPV cash-flow waterfalls, and capital gains exemptions."
+series: "Series 04: Real Estate, REITs & SM REITs"
+seriesOrder: 1
+assetClass: ["Real Estate", "REITs"]
+riskTier: 3
+difficulty: 3
+verifiedOn: "2026-10-15"
+---
+import PostLayout from '../../layouts/PostLayout.astro';
+import Callout from '../../components/Callout.astro';
+import Cite from '../../components/Cite.astro';
+import Mermaid from '../../components/Mermaid.astro';
+
+<PostLayout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  series={frontmatter.series}
+  seriesOrder={frontmatter.seriesOrder}
+  assetClass={frontmatter.assetClass}
+  riskTier={frontmatter.riskTier}
+  difficulty={frontmatter.difficulty}
+  verifiedOn={frontmatter.verifiedOn}
+>
+
+## 1. TL;DR & Quantitative Overview
+
+<div class="p-5 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-900/50 shadow-xs my-6 space-y-3 font-sans">
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
+    <div>
+      <span class="text-stone-500 block">Residential Rental Yield</span>
+      <strong class="text-base text-red-600 font-mono">1.8% – 3.0% Gross</strong>
+      <span class="text-[10px] text-stone-400 block">Sub-1% net after tax & maint.</span>
+    </div>
+    <div>
+      <span class="text-stone-500 block">Commercial REIT Yield</span>
+      <strong class="text-base text-emerald-600 font-mono">6.0% – 7.5% Dist.</strong>
+      <span class="text-[10px] text-stone-400 block">Quarterly Cash Flow + Cap. Growth</span>
+    </div>
+    <div>
+      <span class="text-stone-500 block">SM REIT Ticket Size</span>
+      <strong class="text-base text-stone-900 dark:text-stone-100 font-mono">₹10 Lakhs Min</strong>
+      <span class="text-[10px] text-stone-400 block">SEBI Regulated Fractional Platforms</span>
+    </div>
+    <div>
+      <span class="text-stone-500 block">Property LTCG Tax</span>
+      <strong class="text-base text-amber-600 font-mono">12.5% (&gt;24 months)</strong>
+      <span class="text-[10px] text-stone-400 block">Grandfathering for Pre-July 2024</span>
+    </div>
+  </div>
+</div>
+
+Real estate is deeply ingrained in Indian cultural wealth psychology, yet direct physical residential property is frequently one of the lowest-yielding, most illiquid, and legally encumbered asset classes an individual can own. Conversely, the introduction of **Real Estate Investment Trusts (REITs)** and **Small & Medium REITs (SM REITs)** by SEBI has transformed commercial property into a liquid, transparent, and cash-distributing institutional avenue.
+
+---
+
+## 2. The SEBI REIT Cash-Flow Distribution Waterfall
+
+Under SEBI REIT regulations, listed REITs are legally mandated to distribute at least **90% of Net Distributable Cash Flows (NDCF)** to unitholders.
+
+<Mermaid title="SEBI REIT Cash Flow Distribution & Tax Passthrough Waterfall">
+{`flowchart TD
+    Tenants["Grade-A Corporate Tenants"] -->|Contractual Monthly Lease Payments| SPVs["Special Purpose Vehicles (SPVs)"]
+    SPVs -->|Clean Dividend & Interest Upstreaming| REIT["REIT Trust Level"]
+    REIT -->|Mandatory 90% NDCF Distribution| Distribution["Quarterly Unitholder Distribution"]
+    Distribution --> Comp1["Dividend Component (Exempt under Sec 10-23FD)"]
+    Distribution --> Comp2["Interest Component (Taxable at Slab Rate)"]`}
+</Mermaid>
+
+---
+
+## 3. Statutory Property Capital Gains Tax (FY 2026-27)
+
+<Callout type="tax" title="Current Real Estate Tax Provisions">
+  - **Holding Period Threshold:** 24 months separates Short-Term from Long-Term Capital Gains.
+  - **LTCG Rate:** **12.5% without indexation** under Section 112.
+  - **Grandfathering Clause:** Resident individuals who acquired property prior to July 23, 2024, can compute tax under BOTH methods (20% with indexation vs 12.5% without) and pay the lower tax amount!
+  - **Section 54 Exemption:** Full LTCG exemption by reinvesting capital gains in residential property.
+</Callout>
+
+---
+
+## 4. Primary Citations & References
+
+1. <Cite source="SEBI REIT Regulations 2014" url="https://www.sebi.gov.in" accessed="2026-10-15" /> — SEBI (Real Estate Investment Trusts) Regulations.
+2. <Cite source="RERA Act 2016" url="https://indiacode.nic.in" accessed="2026-10-15" /> — Real Estate (Regulation and Development) Act.
+
+</PostLayout>

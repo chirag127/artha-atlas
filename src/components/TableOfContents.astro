@@ -1,0 +1,59 @@
+---
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface Props {
+  headings: Heading[];
+}
+
+const { headings } = Astro.props;
+const filtered = headings.filter((h) => h.depth === 2 || h.depth === 3);
+---
+{filtered.length > 0 && (
+  <nav aria-label="Table of contents" class="sticky top-24 space-y-2 p-4 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50/50 dark:bg-stone-900/30 text-xs max-h-[calc(100vh-8rem)] overflow-y-auto">
+    <div class="font-serif font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100 pb-2 border-b border-stone-200 dark:border-stone-800 flex items-center justify-between">
+      <span>On this page</span>
+      <span class="text-[10px] text-amber-600 font-mono">TOC</span>
+    </div>
+    <ul class="space-y-1.5 pt-2">
+      {filtered.map((heading) => (
+        <li class={heading.depth === 3 ? 'pl-3' : ''}>
+          <a
+            href={`#${heading.slug}`}
+            class="toc-link block text-stone-600 dark:text-stone-400 hover:text-amber-600 dark:hover:text-amber-400 transition-colors py-0.5 line-clamp-1"
+            data-target={heading.slug}
+          >
+            {heading.text}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+)}
+
+<script is:inline>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          document.querySelectorAll('.toc-link').forEach((link) => {
+            if (link.getAttribute('data-target') === id) {
+              link.classList.add('text-amber-600', 'dark:text-amber-400', 'font-semibold');
+            } else {
+              link.classList.remove('text-amber-600', 'dark:text-amber-400', 'font-semibold');
+            }
+          });
+        }
+      });
+    },
+    { rootMargin: '0px 0px -70% 0px' }
+  );
+
+  document.querySelectorAll('h2[id], h3[id]').forEach((heading) => {
+    observer.observe(heading);
+  });
+</script>

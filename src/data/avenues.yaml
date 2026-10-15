@@ -1,0 +1,394 @@
+# Artha Atlas - Master Avenues Dataset
+# Single Source of Truth for Indian Investment Vehicles
+# Tax Rates aligned with Indian Tax Law (FY 2026-27 / Income-tax Act updates)
+
+- id: "large-cap-stocks"
+  name: "Large-Cap Indian Equities (Nifty 50 / Sensex)"
+  category: "Equity"
+  regulator: "SEBI"
+  minTicket: 100
+  lockInDays: 0
+  liquidityDays: 1
+  historicalReturn: "12% - 14% (15-yr CAGR)"
+  volatility: "Moderate to High"
+  maxDrawdown: "-38% (2020 COVID), -55% (2008 GFC)"
+  expectedRealReturn: "6% - 8%"
+  creditRisk: "Negligible (Operating business risk)"
+  fraudRisk: "Low (High institutional surveillance)"
+  taxation:
+    stcg: "20% (holding <= 12 months)"
+    ltcg: "12.5% above ₹1.25 Lakhs/year exemption (holding > 12 months)"
+    dividendTax: "Taxed at individual slab rate"
+  suitability: "Core long-term wealth compounding (5+ years horizon)"
+  keyRisks:
+    - "Market downturns and macro valuation compression"
+    - "Corporate earnings slowdown"
+  verifiedOn: "2026-10-15"
+
+- id: "mid-small-cap-stocks"
+  name: "Mid, Small & Micro-Cap Equities"
+  category: "Equity"
+  regulator: "SEBI"
+  minTicket: 100
+  lockInDays: 0
+  liquidityDays: 1
+  historicalReturn: "14% - 19% (Cycle dependent)"
+  volatility: "Very High"
+  maxDrawdown: "-65% to -75% (2008, 2018 small-cap bust)"
+  expectedRealReturn: "8% - 11%"
+  creditRisk: "Low to Moderate"
+  fraudRisk: "Moderate (Pump-and-dump, promoter manipulation risk)"
+  taxation:
+    stcg: "20% (holding <= 12 months)"
+    ltcg: "12.5% above ₹1.25 Lakhs/year exemption (holding > 12 months)"
+    dividendTax: "Taxed at individual slab rate"
+  suitability: "Aggressive investors with 7-10+ years horizon and high drawdown tolerance"
+  keyRisks:
+    - "Extreme drawdowns requiring 3-5 years to break even"
+    - "Illiquidity during bear market panics"
+  verifiedOn: "2026-10-15"
+
+- id: "sme-ipo"
+  name: "SME Platform Equities (NSE Emerge / BSE SME)"
+  category: "Equity"
+  regulator: "SEBI"
+  minTicket: 100000
+  lockInDays: 0
+  liquidityDays: 7
+  historicalReturn: "Highly Bimodal (-90% to +500%)"
+  volatility: "Extreme"
+  maxDrawdown: "-80% to -95%"
+  expectedRealReturn: "Unpredictable / High Risk"
+  creditRisk: "High"
+  fraudRisk: "High (Circular trading, promoter circular funding)"
+  taxation:
+    stcg: "20% (holding <= 12 months)"
+    ltcg: "12.5% above ₹1.25 Lakhs/year (holding > 12 months)"
+    dividendTax: "Taxed at individual slab rate"
+  suitability: "Sophisticated quant/forensic investors only; lot sizes >= ₹1,00,000"
+  keyRisks:
+    - "Shell company characteristics and creative accounting"
+    - "Zero buyers on lower circuit limits for months"
+  verifiedOn: "2026-10-15"
+
+- id: "index-mutual-funds"
+  name: "Index Mutual Funds & Broad-Market ETFs"
+  category: "Mutual Funds"
+  regulator: "SEBI"
+  minTicket: 100
+  lockInDays: 0
+  liquidityDays: 2
+  historicalReturn: "12% - 13.5% (Nifty 50 / Nifty 500)"
+  volatility: "Moderate to High"
+  maxDrawdown: "-38% (2020), -55% (2008)"
+  expectedRealReturn: "6% - 7.5%"
+  creditRisk: "Negligible"
+  fraudRisk: "Negligible (SEBI custody architecture)"
+  taxation:
+    stcg: "20% (holding <= 12 months)"
+    ltcg: "12.5% above ₹1.25 Lakhs/year exemption (holding > 12 months)"
+    dividendTax: "Growth plans accumulate without annual dividend tax"
+  suitability: "Ideal foundational cornerstone for all Indian equity investors"
+  keyRisks:
+    - "No downside protection during bear markets"
+    - "Tracking error drag if poorly managed"
+  verifiedOn: "2026-10-15"
+
+- id: "active-equity-mutual-funds"
+  name: "Active Equity Mutual Funds (Flexi/Large/Mid/Small)"
+  category: "Mutual Funds"
+  regulator: "SEBI"
+  minTicket: 500
+  lockInDays: 0
+  liquidityDays: 2
+  historicalReturn: "12% - 16% (Dispersion across managers)"
+  volatility: "High"
+  maxDrawdown: "-35% to -50%"
+  expectedRealReturn: "6% - 9%"
+  creditRisk: "Negligible"
+  fraudRisk: "Negligible"
+  taxation:
+    stcg: "20% (holding <= 12 months)"
+    ltcg: "12.5% above ₹1.25 Lakhs/year (holding > 12 months)"
+    dividendTax: "Growth option tax deferred until redemption"
+  suitability: "Long-term investors seeking potential alpha over broad indices"
+  keyRisks:
+    - "Manager style drift and persistent benchmark underperformance (SPIVA)"
+    - "TER drag (1.5% - 2.2% in regular plans vs direct)"
+  verifiedOn: "2026-10-15"
+
+- id: "debt-mutual-funds"
+  name: "Debt Mutual Funds (Liquid, Money Market, Short Duration)"
+  category: "Fixed Income"
+  regulator: "SEBI"
+  minTicket: 500
+  lockInDays: 0
+  liquidityDays: 1
+  historicalReturn: "6.5% - 7.8% (Reflects RBI Repo Cycle)"
+  volatility: "Low"
+  maxDrawdown: "-1% to -4% (Credit crisis spikes)"
+  expectedRealReturn: "0.5% - 1.5%"
+  creditRisk: "Low (Sovereign/AAA) to Moderate"
+  fraudRisk: "Negligible"
+  taxation:
+    stcg: "Taxed at individual slab rate (Section 50AA)"
+    ltcg: "Taxed at individual slab rate (No indexation benefit post April 2023)"
+    dividendTax: "Taxed at slab rate"
+  suitability: "Emergency reserves, STP parking, and 1-3 year horizon capital preservation"
+  keyRisks:
+    - "Interest rate duration risk in rising yield cycles"
+    - "Credit default / downgrade risk in sub-AAA papers"
+  verifiedOn: "2026-10-15"
+
+- id: "rbi-retail-direct-gsec"
+  name: "Government Securities (G-Secs) & T-Bills via RBI Retail Direct"
+  category: "Fixed Income"
+  regulator: "RBI"
+  minTicket: 10000
+  lockInDays: 0
+  liquidityDays: 3
+  historicalReturn: "6.8% - 7.5% (10-Yr Benchmark Yield)"
+  volatility: "Low to Moderate (MTM duration volatility if sold before maturity)"
+  maxDrawdown: "-3% to -8% (Yield spikes on long duration)"
+  expectedRealReturn: "0.8% - 1.8%"
+  creditRisk: "Zero (Sovereign guarantee of the Republic of India)"
+  fraudRisk: "Zero (Direct account with the Reserve Bank of India)"
+  taxation:
+    stcg: "Slab rate"
+    ltcg: "12.5% without indexation (for listed bonds held > 12 months)"
+    dividendTax: "Coupons taxed at individual slab rate"
+  suitability: "Risk-averse investors, retirees, and institution-grade fixed income"
+  keyRisks:
+    - "Secondary market retail liquidity can be thin on NDS-OM"
+    - "Reinvestment risk upon maturity"
+  verifiedOn: "2026-10-15"
+
+- id: "public-provident-fund"
+  name: "Public Provident Fund (PPF)"
+  category: "Fixed Income"
+  regulator: "Ministry of Finance"
+  minTicket: 500
+  lockInDays: 5475
+  liquidityDays: 15
+  historicalReturn: "7.1% (Quarterly notified government rate)"
+  volatility: "Zero"
+  maxDrawdown: "0%"
+  expectedRealReturn: "0.5% - 1.5%"
+  creditRisk: "Zero (Sovereign backing)"
+  fraudRisk: "Zero (Administered by designated banks and India Post)"
+  taxation:
+    stcg: "Exempt (EEE Status under Section 80C old regime)"
+    ltcg: "Exempt (100% Tax-free maturity proceeds)"
+    dividendTax: "Interest is completely tax-free"
+  suitability: "Safe fixed income bucket for ultra-conservative long-term savers"
+  keyRisks:
+    - "Strict 15-year lock-in with limited partial withdrawal after 7 years"
+    - "Annual investment cap of ₹1.5 Lakhs"
+  verifiedOn: "2026-10-15"
+
+- id: "national-pension-system"
+  name: "National Pension System (NPS Tier-1)"
+  category: "Personal Finance"
+  regulator: "PFRDA"
+  minTicket: 500
+  lockInDays: 10950
+  liquidityDays: 30
+  historicalReturn: "9.5% - 12.0% (Blended Equity E + Debt C/G allocation)"
+  volatility: "Moderate"
+  maxDrawdown: "-20% (Equity component in 2020)"
+  expectedRealReturn: "3.5% - 5.5%"
+  creditRisk: "Very Low"
+  fraudRisk: "Zero (NPS Trust & PFRDA oversight)"
+  taxation:
+    stcg: "Exempt during accumulation"
+    ltcg: "60% lump sum at age 60 is completely tax-free"
+    dividendTax: "40% mandatory annuity income taxed at individual slab rate"
+  suitability: "Retirement planning with lowest fund management charge (0.09%)"
+  keyRisks:
+    - "Locked until age 60"
+    - "Mandatory 40% annuity yields are historically low (5.5% - 6.5% taxable)"
+  verifiedOn: "2026-10-15"
+
+- id: "reits-india"
+  name: "Real Estate Investment Trusts (REITs - Embassy, Nexus, Mindspace, Brookfield)"
+  category: "Real Estate"
+  regulator: "SEBI"
+  minTicket: 350
+  lockInDays: 0
+  liquidityDays: 1
+  historicalReturn: "10% - 13% (6-7% distribution yield + 4-6% capital growth)"
+  volatility: "Moderate"
+  maxDrawdown: "-25% (2020 COVID commercial freeze)"
+  expectedRealReturn: "4% - 6%"
+  creditRisk: "Low (Grade-A multinational corporate tenants)"
+  fraudRisk: "Low (SEBI 80% rent-generating asset mandate)"
+  taxation:
+    stcg: "20% on capital gains (holding <= 12 months)"
+    ltcg: "12.5% above ₹1.25L (holding > 12 months)"
+    dividendTax: "Dividends exempt if SPV chose old corporate tax; interest taxable"
+  suitability: "Income-seeking investors wanting commercial real estate exposure without large capital"
+  keyRisks:
+    - "Work-from-home shifts and vacancy rate escalations"
+    - "Interest rate spikes depressing REIT yield attractiveness"
+  verifiedOn: "2026-10-15"
+
+- id: "sm-reits"
+  name: "Small & Medium REITs (SM REITs - Fractional Ownership)"
+  category: "Real Estate"
+  regulator: "SEBI"
+  minTicket: 1000000
+  lockInDays: 0
+  liquidityDays: 5
+  historicalReturn: "11% - 14% (Targeted rental yield + appreciation)"
+  volatility: "Moderate to High"
+  maxDrawdown: "-25% (Asset specific liquidity locks)"
+  expectedRealReturn: "4.5% - 7%"
+  creditRisk: "Moderate"
+  fraudRisk: "Low (Now regulated under SEBI SM REIT amendments)"
+  taxation:
+    stcg: "20% (holding <= 12 months)"
+    ltcg: "12.5% (holding > 12 months)"
+    dividendTax: "Pass-through distributions taxed per nature"
+  suitability: "High Net Worth Individuals (HNIs) seeking curated commercial assets"
+  keyRisks:
+    - "Single asset concentration risk unlike diversified traditional REITs"
+    - "Secondary market trading liquidity can be constrained"
+  verifiedOn: "2026-10-15"
+
+- id: "physical-residential-real-estate"
+  name: "Direct Residential Real Estate"
+  category: "Real Estate"
+  regulator: "State RERA / Municipalities"
+  minTicket: 3000000
+  lockInDays: 1095
+  liquidityDays: 180
+  historicalReturn: "7% - 10% (2-3% rental yield + 5-7% capital appreciation)"
+  volatility: "Low (Illiquidity suppresses observable volatility)"
+  maxDrawdown: "-20% to -35% (Real inflation-adjusted stagnation)"
+  expectedRealReturn: "1% - 3%"
+  creditRisk: "Builder default / Project delay risk"
+  fraudRisk: "Moderate (Title litigation, encroachments, builder insolvency)"
+  taxation:
+    stcg: "Taxed at individual slab rate (holding <= 24 months)"
+    ltcg: "12.5% without indexation (or grandfathered option for pre-July 2024)"
+    dividendTax: "Rental income taxed under House Property with 30% standard deduction"
+  suitability: "Self-use residential security; poor pure financial investment asset"
+  keyRisks:
+    - "Extremely low gross rental yields (1.8% - 3.0% in tier-1 Indian metros)"
+    - "Severe transaction friction: 6-10% stamp duty, registration, and brokerage"
+  verifiedOn: "2026-10-15"
+
+- id: "gold-etfs"
+  name: "Gold ETFs & Sovereign Gold Bonds (SGB Secondary)"
+  category: "Gold & Silver"
+  regulator: "SEBI / RBI"
+  minTicket: 100
+  lockInDays: 0
+  liquidityDays: 1
+  historicalReturn: "9.5% - 11.5% (INR gold 20-yr CAGR)"
+  volatility: "Moderate to High"
+  maxDrawdown: "-28% (2012-2015 global gold bear cycle)"
+  expectedRealReturn: "3% - 4.5%"
+  creditRisk: "Zero to Negligible (Physical vaulted 99.5% pure gold backing)"
+  fraudRisk: "Zero (Regulated exchange custodians)"
+  taxation:
+    stcg: "Slab rate (holding <= 12 months)"
+    ltcg: "12.5% without indexation (holding > 12 months)"
+    dividendTax: "SGB 2.5% coupon taxable; SGB maturity 100% tax-free"
+  suitability: "Portfolio hedge against currency depreciation and geopolitical shocks"
+  keyRisks:
+    - "Zero cash-flow generation (gold yields no dividend or rent)"
+    - "Extended multi-year consolidation periods"
+  verifiedOn: "2026-10-15"
+
+- id: "pms-aif"
+  name: "Portfolio Management Services (PMS) & AIF Cat III"
+  category: "Alternatives"
+  regulator: "SEBI"
+  minTicket: 5000000
+  lockInDays: 365
+  liquidityDays: 30
+  historicalReturn: "12% - 20% (Wide dispersion)"
+  volatility: "High to Very High"
+  maxDrawdown: "-40% to -60%"
+  expectedRealReturn: "7% - 12%"
+  creditRisk: "Low to Moderate"
+  fraudRisk: "Low (SEBI regulated)"
+  taxation:
+    stcg: "Pass-through to client in PMS (20% equity STCG)"
+    ltcg: "Pass-through to client (12.5% equity LTCG)"
+    dividendTax: "Pass-through taxed in client hands"
+  suitability: "Accredited investors with ₹50L+ ticket capacity seeking bespoke strategies"
+  keyRisks:
+    - "High fee hurdle: 1.5-2.5% fixed fee + 15-20% profit share above hurdle"
+    - "Tax drag: Every portfolio rebalance generates immediate tax liability in PMS"
+  verifiedOn: "2026-10-15"
+
+- id: "p2p-lending"
+  name: "Peer-to-Peer (P2P) Lending NBFCs"
+  category: "P2P & Private Credit"
+  regulator: "RBI"
+  minTicket: 10000
+  lockInDays: 90
+  liquidityDays: 60
+  historicalReturn: "9% - 12% (Advertised) / 5% - 8% (Post actual write-offs)"
+  volatility: "Moderate"
+  maxDrawdown: "-15% to -25% (Platform credit deterioration)"
+  expectedRealReturn: "0% - 2%"
+  creditRisk: "Very High (Unsecured personal subprime retail loans)"
+  fraudRisk: "Moderate (Platform asset-liability mismatch, delayed T+1 returns)"
+  taxation:
+    stcg: "Interest taxed at individual slab rate as Income from Other Sources"
+    ltcg: "N/A (All returns are ordinary interest)"
+    dividendTax: "No capital gains advantage"
+  suitability: "Experimental alternative allocation (max 1-3% of portfolio)"
+  keyRisks:
+    - "RBI tightened escrow and exposure norms in 2024 to curb instant liquidity guarantees"
+    - "Unsecured defaults cannot be offset against capital gains"
+  verifiedOn: "2026-10-15"
+
+- id: "derivatives-fo"
+  name: "Futures & Options (F&O) Derivatives Trading"
+  category: "Derivatives"
+  regulator: "SEBI"
+  minTicket: 50000
+  lockInDays: 0
+  liquidityDays: 1
+  historicalReturn: "-93% loss rate among individual retail traders (SEBI study)"
+  volatility: "Extreme"
+  maxDrawdown: "-100% (Total capital loss or negative equity on shorting)"
+  expectedRealReturn: "Negative for 93%+ of retail participants"
+  creditRisk: "Low (Exchange clearing house guarantee)"
+  fraudRisk: "Moderate (Illegal telegram tipsters and algorithm schemes)"
+  taxation:
+    stcg: "Taxed as non-speculative business income at slab rate"
+    ltcg: "N/A"
+    dividendTax: "Audit mandated under Section 44AB if turnover/loss thresholds triggered"
+  suitability: "Institutional hedgers and professional quants only; disastrous for retail"
+  keyRisks:
+    - "Mathematical negative expectancy after STT, brokerage, exchange fees, and GST"
+    - "Theta time decay completely eliminates long option buyer capital"
+  verifiedOn: "2026-10-15"
+
+- id: "crypto-vda"
+  name: "Crypto & Virtual Digital Assets (Bitcoin, Ethereum)"
+  category: "Crypto / VDA"
+  regulator: "FIU-IND (PMLA compliance only; unregulated asset class)"
+  minTicket: 500
+  lockInDays: 0
+  liquidityDays: 1
+  historicalReturn: "High Historical CAGR with extreme boom-bust cycles"
+  volatility: "Extreme"
+  maxDrawdown: "-75% to -85% (2018, 2022 crypto winters)"
+  expectedRealReturn: "Unpredictable"
+  creditRisk: "High (Exchange insolvency, bridge exploits)"
+  fraudRisk: "High (Pig butchering, fake trading apps, rug-pulls)"
+  taxation:
+    stcg: "Flat 30% tax under Section 115BBH + 4% cess"
+    ltcg: "Flat 30% (No long-term distinction, no indexation)"
+    dividendTax: "Zero loss set-off across coins; 1% TDS on every transfer (Section 194S)"
+  suitability: "Speculative tech exposure only (max 1-2% of net worth)"
+  keyRisks:
+    - "Punitive Indian tax regime: Loss on Bitcoin cannot offset gain on Ethereum"
+    - "No statutory investor protection or ombudsman"
+  verifiedOn: "2026-10-15"

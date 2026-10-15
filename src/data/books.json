@@ -1,0 +1,182 @@
+[
+  {
+    "id": "coffee-can-investing",
+    "title": "Coffee Can Investing: The Low Risk Route to Stupendous Wealth",
+    "authors": ["Saurabh Mukherjea", "Rakshit Ranjan", "Pranab Uniyal"],
+    "year": 2018,
+    "category": "Indian Equities & Investing",
+    "level": "Beginner to Intermediate",
+    "whyItMatters": "Presents an empirical framework for Indian public equity selection based on ROCE > 15% and revenue growth > 10% sustained over a decade.",
+    "keyTakeaways": [
+      "Survivorship and clean accounts filter removes 90% of BSE listed universe",
+      "Long-term buy-and-hold reduces portfolio churn and frictional transaction costs",
+      "Power of compounding in Indian consumer monopolies"
+    ],
+    "link": "https://www.amazon.in/dp/0670090432"
+  },
+  {
+    "id": "unusual-billionaires",
+    "title": "The Unusual Billionaires",
+    "authors": ["Saurabh Mukherjea"],
+    "year": 2016,
+    "category": "Indian Business History",
+    "level": "Intermediate",
+    "whyItMatters": "In-depth case studies of Indian corporate champions (Asian Paints, Marico, HDFC Bank, Astral Poly) that built durable moats.",
+    "keyTakeaways": [
+      "Competitive moats in distribution, IT supply chain, and brand recall",
+      "Capital allocation discipline during cyclical downturns",
+      "Promoter integrity and capital efficiency"
+    ],
+    "link": "https://www.amazon.in/dp/0670089256"
+  },
+  {
+    "id": "diamonds-in-the-dust",
+    "title": "Diamonds in the Dust: Consistent Compounding for Extraordinary Wealth Creation",
+    "authors": ["Saurabh Mukherjea", "Rakshit Ranjan", "Salil Desai"],
+    "year": 2021,
+    "category": "Forensic Accounting & Indian Equities",
+    "level": "Intermediate to Advanced",
+    "whyItMatters": "Essential guide on forensic accounting checklists to detect Indian corporate manipulation and creative accounting.",
+    "keyTakeaways": [
+      "Auditor rotation, related-party transactions, and contingent liabilities",
+      "Cash flow conversion vs reported accounting EBITDA",
+      "Evaluating management capital reinvestment quality"
+    ],
+    "link": "https://www.amazon.in/dp/0670094764"
+  },
+  {
+    "id": "bulls-bears-other-beasts",
+    "title": "Bulls, Bears and Other Beasts: A Story of the Indian Stock Market",
+    "authors": ["Santosh Nair"],
+    "year": 2017,
+    "category": "Indian Market History",
+    "level": "All Levels",
+    "whyItMatters": "Fictionalized biographical account capturing the post-liberalization history of Dalal Street, from open outcry to screen trading.",
+    "keyTakeaways": [
+      "Cyclical mania and panics across 1992, 2000 tech bubble, and 2008 Lehman crisis",
+      "Operator syndicates, circular trading, and retail traps",
+      "Evolution of SEBI regulatory surveillance"
+    ],
+    "link": "https://www.amazon.in/dp/9386228383"
+  },
+  {
+    "id": "the-scam",
+    "title": "The Scam: Who Won, Who Lost, Who Got Away",
+    "authors": ["Sucheta Dalal", "Debashis Basu"],
+    "year": 1993,
+    "category": "Financial Scams & Indian Market History",
+    "level": "Intermediate",
+    "whyItMatters": "The definitive investigative journalism account of the 1992 Harshad Mehta securities scam.",
+    "keyTakeaways": [
+      "How Bank Receipts (BRs) and inter-bank ready-forward deals were misused",
+      "Collusion between public sector banks and stock brokers",
+      "Catalyzed the creation of modern electronic depositories (NSDL/CDSL) and SEBI empowerment"
+    ],
+    "link": "https://www.amazon.in/dp/8186256254"
+  },
+  {
+    "id": "intelligent-investor",
+    "title": "The Intelligent Investor",
+    "authors": ["Benjamin Graham"],
+    "year": 1949,
+    "category": "Foundational Classics",
+    "level": "Intermediate",
+    "whyItMatters": "The timeless foundational text on value investing, the concept of Margin of Safety, and Mr. Market psychology.",
+    "keyTakeaways": [
+      "Distinction between investment and speculation",
+      "Defensive vs enterprising investor allocation frameworks",
+      "Emotional detachment from market fluctuations"
+    ],
+    "link": "https://www.amazon.in/dp/0060555661"
+  },
+  {
+    "id": "psychology-of-money",
+    "title": "The Psychology of Money: Timeless lessons on wealth, greed, and happiness",
+    "authors": ["Morgan Housel"],
+    "year": 2020,
+    "category": "Behavioural Finance",
+    "level": "Beginner",
+    "whyItMatters": "Argues that doing well with money has a little to do with how smart you are and a lot to do with how you behave.",
+    "keyTakeaways": [
+      "Wealth is what you do not see (saved capital rather than consumed items)",
+      "Room for error (margin of safety) is the most critical component of financial plans",
+      "Compounding only works when you give an asset un-interrupted time"
+    ],
+    "link": "https://www.amazon.in/dp/9390166268"
+  },
+  {
+    "id": "bogleheads-guide-to-investing",
+    "title": "The Bogleheads' Guide to Investing",
+    "authors": ["Taylor Larimore", "Mel Lindauer", "Michael LeBoeuf"],
+    "year": 2006,
+    "category": "Passive Indexing & Asset Allocation",
+    "level": "Beginner to Intermediate",
+    "whyItMatters": "The bible of low-cost broad index investing, simplicity in personal finance, and keeping investment expenses minimal.",
+    "keyTakeaways": [
+      "Costs matter enormously over decades due to expense drag",
+      "Asset allocation drives over 90% of portfolio return variability",
+      "Market timing is mathematically futile for retail investors"
+    ],
+    "link": "https://www.amazon.in/dp/1118921283"
+  },
+  {
+    "id": "let-talk-money",
+    "title": "Let's Talk Money: You've Worked Hard for It, Now Make It Work for You",
+    "authors": ["Monika Halan"],
+    "year": 2018,
+    "category": "Indian Personal Finance",
+    "level": "Beginner",
+    "whyItMatters": "The most practical, grounded cash-flow system designed specifically for Indian salaried professionals.",
+    "keyTakeaways": [
+      "Three-bank-account cash-flow automation system (Income, Spend, Invest)",
+      "Strict separation of insurance from investment (avoiding traditional endowment/money-back traps)",
+      "Building a medical contingency shield before entering equity"
+    ],
+    "link": "https://www.amazon.in/dp/9352779391"
+  },
+  {
+    "id": "let-talk-mutual-funds",
+    "title": "Let's Talk Mutual Funds: A Systematic, Smart Way to Wealth",
+    "authors": ["Monika Halan"],
+    "year": 2021,
+    "category": "Indian Mutual Funds",
+    "level": "Beginner to Intermediate",
+    "whyItMatters": "Navigates the Indian mutual fund landscape, decoding SEBI categories, debt fund risks, and goal-based portfolios.",
+    "keyTakeaways": [
+      "Selecting funds based on asset class rather than recent 1-year returns",
+      "SIP, STP, and SWP mechanics for accumulation and distribution",
+      "Direct plans vs regular plans mathematically computed"
+    ],
+    "link": "https://www.amazon.in/dp/9391165680"
+  },
+  {
+    "id": "what-every-indian-should-know-before-investing",
+    "title": "What Every Indian Should Know Before Investing",
+    "authors": ["Vinod Bhat"],
+    "year": 2019,
+    "category": "Indian Financial Architecture",
+    "level": "Beginner",
+    "whyItMatters": "Comprehensive primer on Indian statutory instruments: EPF, PPF, NPS, Sovereign Gold Bonds, and Real Estate.",
+    "keyTakeaways": [
+      "Tax efficiency under Old vs New Tax Regimes",
+      "Understanding sovereign small savings scheme rules and lock-ins",
+      "Common pitfalls in buying property on debt"
+    ],
+    "link": "https://www.amazon.in/dp/9388754856"
+  },
+  {
+    "id": "expected-returns",
+    "title": "Expected Returns: An Investor's Guide to Harvesting Market Rewards",
+    "authors": ["Antti Ilmanen"],
+    "year": 2011,
+    "category": "Quantitative Finance & Asset Pricing",
+    "level": "Advanced",
+    "whyItMatters": "Comprehensive academic and practitioner synthesis of historical risk premiums across equities, fixed income, credit, and alternative factors.",
+    "keyTakeaways": [
+      "Equity risk premium, term premium, credit spread, and liquidity premium dynamics",
+      "Factor premiums: Value, Momentum, Carry, and Volatility",
+      "Managing expectations and avoiding recency bias"
+    ],
+    "link": "https://www.amazon.in/dp/1119990726"
+  }
+]

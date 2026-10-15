@@ -1,0 +1,86 @@
+---
+title: "High-Return Alternative Investments in India: AIFs, PMS, Private Credit, and SIFs"
+description: "Comprehensive operational guide to Indian accredited investor avenues: Category I/II/III AIFs, Portfolio Management Services (PMS), private debt default math, fee hurdle calculations, and pass-through taxation."
+series: "Series 06: Alternative Assets & High-Risk Ventures"
+seriesOrder: 1
+assetClass: ["Alternatives", "Private Credit"]
+riskTier: 5
+difficulty: 4
+verifiedOn: "2026-10-15"
+---
+import PostLayout from '../../layouts/PostLayout.astro';
+import Callout from '../../components/Callout.astro';
+import Cite from '../../components/Cite.astro';
+import Mermaid from '../../components/Mermaid.astro';
+
+<PostLayout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  series={frontmatter.series}
+  seriesOrder={frontmatter.seriesOrder}
+  assetClass={frontmatter.assetClass}
+  riskTier={frontmatter.riskTier}
+  difficulty={frontmatter.difficulty}
+  verifiedOn={frontmatter.verifiedOn}
+>
+
+## 1. TL;DR & Quantitative Overview
+
+<div class="p-5 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-900/50 shadow-xs my-6 space-y-3 font-sans">
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
+    <div>
+      <span class="text-stone-500 block">SEBI Minimum Ticket</span>
+      <strong class="text-base text-stone-900 dark:text-stone-100 font-mono">₹50L (PMS) / ₹1 Cr (AIF)</strong>
+      <span class="text-[10px] text-stone-400 block">Accredited investor concessions</span>
+    </div>
+    <div>
+      <span class="text-stone-500 block">Fee Structure Friction</span>
+      <strong class="text-base text-red-600 font-mono">2% Mgmt + 20% Carry</strong>
+      <span class="text-[10px] text-stone-400 block">Above 8%–10% hurdle rate</span>
+    </div>
+    <div>
+      <span class="text-stone-500 block">Private Credit Gross Yield</span>
+      <strong class="text-base text-emerald-600 font-mono">13% – 16% Target</strong>
+      <span class="text-[10px] text-stone-400 block">Senior secured vs subordinated</span>
+    </div>
+    <div>
+      <span class="text-stone-500 block">AIF Cat II Taxation</span>
+      <strong class="text-base text-amber-600 font-mono">Pass-Through Status</strong>
+      <span class="text-[10px] text-stone-400 block">Sec 115UB (Taxed in investor hands)</span>
+    </div>
+  </div>
+</div>
+
+For High Net Worth Individuals (HNIs) and family offices in India, wealth preservation often transitions into pursuing asymmetric returns through private markets: unlisted startups, private equity, structured debt, and quantitative hedge fund strategies.
+
+---
+
+## 2. Structural Spectrum: PMS vs AIF Categories
+
+<Mermaid title="SEBI Accredited Investor Architecture & Vehicle Structuring">
+{`flowchart TD
+    Investor[Accredited Investor: Net Worth > ₹5 Cr] --> Vehicle{Vehicle Selection}
+    Vehicle -->|Min ₹50 Lakhs Ticket| PMS[Portfolio Management Services: Client Demat Account]
+    Vehicle -->|Min ₹1 Crore Ticket| AIF[Alternative Investment Funds: Privately Pooled Trust]
+    AIF --> Cat1[Category I: VC, Angel, Infrastructure Funds]
+    AIF --> Cat2[Category II: Private Equity, Private Credit, Real Estate]
+    AIF --> Cat3[Category III: Long-Short Equity, Hedge, Quant F&O]`}
+</Mermaid>
+
+---
+
+## 3. Statutory Taxation Framework (Section 115UB)
+
+<Callout type="tax" title="Pass-Through Taxation of AIF Category I and II">
+  - **Category I & II AIFs:** Granted **statutory pass-through status under Section 115UB**. The fund itself pays zero tax. Income earned is taxed directly in unitholder hands in the same character.
+  - **Category III AIFs:** Do NOT enjoy full pass-through status for business income. The fund itself is typically taxed at the Maximum Marginal Rate (MMR) at trust level.
+</Callout>
+
+---
+
+## 4. Primary Citations & References
+
+1. <Cite source="SEBI AIF Regulations 2012" url="https://www.sebi.gov.in" accessed="2026-10-15" /> — SEBI (Alternative Investment Funds) Regulations.
+2. <Cite source="Income Tax Act Sec 115UB" url="https://incometax.gov.in" accessed="2026-10-15" /> — Tax on Income from Units of Investment Fund.
+
+</PostLayout>

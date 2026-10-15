@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+<BaseLayout
+  title="Statutory Legal Disclaimer — Artha Atlas"
+  description="Official legal disclaimer, regulatory standing, and limitation of liability for Artha Atlas."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <Breadcrumbs items={[{ label: 'Statutory Disclaimer' }]} />
+
+    <header class="my-6 pb-6 border-b border-stone-200 dark:border-stone-800">
+      <h1 class="text-3xl sm:text-4xl font-serif font-bold text-stone-900 dark:text-stone-50 tracking-tight">
+        Statutory & Legal Disclaimer
+      </h1>
+      <p class="text-sm text-stone-600 dark:text-stone-400 mt-2 font-mono">
+        Last Revised: 2026-10-15
+      </p>
+    </header>
+
+    <div class="space-y-6 text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
+      <div class="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-950 dark:text-amber-100 font-semibold">
+        Artha Atlas is an independent educational and research portal created by Chirag Singhal. The author is NOT registered with the Securities and Exchange Board of India (SEBI) as an Investment Adviser (RIA) or Research Analyst (RA), nor registered with the Reserve Bank of India (RBI) or IRDAI.
+      </div>
+
+      <section class="space-y-2">
+        <h2 class="text-lg font-serif font-bold text-stone-900 dark:text-stone-100">
+          1. Educational and Informational Nature Only
+        </h2>
+        <p>
+          All content, articles, comparison tools, allocation models, mathematical formulas, and historical returns presented on Artha Atlas are provided strictly for educational, informational, and journalistic purposes. Nothing contained on this website constitutes personal financial advice, investment advice, legal advice, or tax advice.
+        </p>
+      </section>
+
+      <section class="space-y-2">
+        <h2 class="text-lg font-serif font-bold text-stone-900 dark:text-stone-100">
+          2. No Guarantee of Returns & Market Risks
+        </h2>
+        <p>
+          Investments in securities, equities, mutual funds, debt papers, real estate, and derivatives are subject to market risks, including the potential total loss of invested capital. Historical returns and back-tested figures are not indicative of future performance. Past performance does not guarantee future results.
+        </p>
+      </section>
+
+      <section class="space-y-2">
+        <h2 class="text-lg font-serif font-bold text-stone-900 dark:text-stone-100">
+          3. Requirement for Independent Professional Consultation
+        </h2>
+        <p>
+          Financial circumstances vary greatly from individual to individual. Readers are strongly advised to perform their own independent due diligence and consult a SEBI-registered Investment Adviser (RIA), a certified financial planner (CFP), and a qualified Chartered Accountant (CA) regarding their specific tax and legal situation before committing any financial resources.
+        </p>
+      </section>
+    </div>
+  </div>
+</BaseLayout>

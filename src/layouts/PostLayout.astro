@@ -1,0 +1,153 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import TableOfContents from '../components/TableOfContents.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  series?: string;
+  seriesOrder?: number;
+  assetClass: string[];
+  riskTier: number; // 1 to 5
+  difficulty: number; // 1 to 5
+  verifiedOn: string;
+  headings?: any[];
+  readingTime?: string;
+}
+
+const {
+  title,
+  description,
+  series,
+  seriesOrder,
+  assetClass,
+  riskTier,
+  difficulty,
+  verifiedOn,
+  headings = [],
+  readingTime = '18 min read',
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// Check if verifiedOn is older than 90 days
+const verifiedDate = new Date(verifiedOn);
+const now = new Date('2026-10-15');
+const diffDays = Math.floor((now.getTime() - verifiedDate.getTime()) / (1000 * 3600 * 24));
+const needsReverification = diffDays > 90;
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "author": {
+    "@type": "Person",
+    "name": "Chirag Singhal"
+  },
+  "datePublished": verifiedOn,
+  "dateModified": verifiedOn
+};
+---
+<BaseLayout title={`${title} — Artha Atlas`} description={description} articleDate={verifiedOn}>
+  <script type="application/ld+json" slot="schema" set:html={JSON.stringify(articleSchema)} />
+
+  <article class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <!-- Breadcrumbs -->
+    <Breadcrumbs
+      items={[
+        { label: 'Knowledge Base', href: `${base}/avenues/` },
+        { label: assetClass[0] || 'Guides', href: `${base}/avenues/` },
+        { label: title },
+      ]}
+    />
+
+    <!-- Header Block -->
+    <header class="my-6 pb-8 border-b border-stone-200 dark:border-stone-800">
+      {series && (
+        <div class="inline-flex items-center space-x-2 text-xs font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/60 border border-amber-200 dark:border-amber-900/50 px-3 py-1 rounded-full mb-3">
+          <span>📚 {series}</span>
+          {seriesOrder && <span>• Part {seriesOrder}</span>}
+        </div>
+      )}
+
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-stone-900 dark:text-stone-50 tracking-tight leading-tight mb-4">
+        {title}
+      </h1>
+
+      <p class="text-base sm:text-lg text-stone-600 dark:text-stone-300 max-w-4xl leading-relaxed mb-6 font-sans">
+        {description}
+      </p>
+
+      <!-- Metadata Badges -->
+      <div class="flex flex-wrap items-center gap-3 text-xs text-stone-600 dark:text-stone-400">
+        <div class="flex items-center space-x-1.5 bg-stone-100 dark:bg-stone-800/80 px-2.5 py-1 rounded-md border border-stone-200 dark:border-stone-700">
+          <span>✍️ Author:</span>
+          <span class="font-semibold text-stone-900 dark:text-stone-200">Chirag Singhal</span>
+        </div>
+        <div class="flex items-center space-x-1.5 bg-stone-100 dark:bg-stone-800/80 px-2.5 py-1 rounded-md border border-stone-200 dark:border-stone-700">
+          <span>⏱️ {readingTime}</span>
+        </div>
+        <div class="flex items-center space-x-1.5 bg-stone-100 dark:bg-stone-800/80 px-2.5 py-1 rounded-md border border-stone-200 dark:border-stone-700">
+          <span>⚡ Risk Tier:</span>
+          <span class="font-bold text-amber-600">{riskTier} / 5</span>
+        </div>
+        <div class="flex items-center space-x-1.5 bg-stone-100 dark:bg-stone-800/80 px-2.5 py-1 rounded-md border border-stone-200 dark:border-stone-700">
+          <span>🎯 Difficulty:</span>
+          <span class="font-bold text-stone-900 dark:text-stone-200">{difficulty} / 5</span>
+        </div>
+        <div class="flex items-center space-x-1.5 bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 px-2.5 py-1 rounded-md border border-emerald-200 dark:border-emerald-800 font-mono">
+          <span>🛡️ Verified:</span>
+          <span>{verifiedOn}</span>
+        </div>
+      </div>
+
+      <!-- Reverification Alert if older than 90 days -->
+      {needsReverification && (
+        <div class="mt-4 p-3 bg-amber-500/15 border border-amber-500 rounded-lg text-amber-900 dark:text-amber-200 text-xs flex items-center space-x-2">
+          <span>⚠️</span>
+          <span>
+            <strong>Scheduled Review Pending:</strong> This post was last fully verified on {verifiedOn} (>90 days ago). Some tax slabs or regulatory thresholds may be undergoing revision.
+          </span>
+        </div>
+      )}
+    </header>
+
+    <!-- Main Content Layout (Article + TOC) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+      <!-- Article Body -->
+      <div class="lg:col-span-8 prose prose-stone dark:prose-invert max-w-none text-stone-800 dark:text-stone-200 leading-relaxed font-sans prose-headings:font-serif prose-headings:tracking-tight prose-a:text-amber-600 dark:prose-a:text-amber-400">
+        <slot />
+      </div>
+
+      <!-- Right Column: Sticky Table of Contents & Tools -->
+      <aside class="hidden lg:block lg:col-span-4 space-y-6">
+        <TableOfContents headings={headings} />
+
+        <!-- Author Card Sidebar -->
+        <div class="p-5 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-900/40 text-xs space-y-3">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-full bg-amber-600 flex items-center justify-center text-white font-serif font-bold text-base shadow-sm">
+              CS
+            </div>
+            <div>
+              <div class="font-serif font-bold text-sm text-stone-900 dark:text-stone-100">Chirag Singhal</div>
+              <div class="text-[11px] text-stone-500 dark:text-stone-400">Software Engineer & Quant Finance Author</div>
+            </div>
+          </div>
+          <p class="text-stone-600 dark:text-stone-400 leading-normal">
+            Researching Indian asset pricing, regulatory statutory limits, and capital preservation.
+          </p>
+          <div class="pt-2 flex flex-wrap gap-2 text-[11px]">
+            <a href="mailto:chirag@oriz.in" class="text-amber-600 hover:underline">chirag@oriz.in</a>
+            <span class="text-stone-300 dark:text-stone-700">•</span>
+            <a href="https://github.com/chirag127" target="_blank" rel="noopener noreferrer" class="text-amber-600 hover:underline">GitHub</a>
+            <span class="text-stone-300 dark:text-stone-700">•</span>
+            <a href="https://buymeacoffee.com/chirag127" target="_blank" rel="noopener noreferrer" class="text-amber-600 hover:underline">Support</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </article>
+</BaseLayout>

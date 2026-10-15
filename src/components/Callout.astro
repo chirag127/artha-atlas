@@ -1,0 +1,35 @@
+---
+interface Props {
+  type?: 'insight' | 'warning' | 'tax' | 'india' | 'advanced';
+  title?: string;
+}
+
+const { type = 'insight', title } = Astro.props;
+
+const icons = {
+  insight: '💡',
+  warning: '⚠️',
+  tax: '⚖️',
+  india: '🇮🇳',
+  advanced: '🔬',
+};
+
+const defaultTitles = {
+  insight: 'Key Financial Insight',
+  warning: 'Critical Risk & Failure Mode',
+  tax: 'Statutory Tax Treatment (FY 2026-27)',
+  india: 'Indian Market Nuance',
+  advanced: 'Quantitative & Mathematical Deep-Dive',
+};
+
+const displayTitle = title || defaultTitles[type];
+---
+<aside class={`callout callout-${type} my-6 rounded-r-lg shadow-xs overflow-hidden`}>
+  <div class="flex items-center space-x-2 font-semibold text-sm mb-1.5">
+    <span class="text-base select-none">{icons[type]}</span>
+    <span class="font-serif tracking-tight">{displayTitle}</span>
+  </div>
+  <div class="text-xs sm:text-sm leading-relaxed space-y-2 opacity-95">
+    <slot />
+  </div>
+</aside>

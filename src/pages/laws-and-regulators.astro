@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+<BaseLayout
+  title="Indian Financial Regulators & Governing Statutes — Artha Atlas"
+  description="Guide to SEBI, RBI, PFRDA, IRDAI, Ministry of Finance, and the statutory legal framework governing Indian investment avenues."
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <Breadcrumbs items={[{ label: 'Statutory Regulators & Laws' }]} />
+
+    <header class="my-6 pb-6 border-b border-stone-200 dark:border-stone-800">
+      <div class="inline-flex items-center space-x-2 text-xs font-mono font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/60 border border-amber-200 dark:border-amber-900 px-3 py-1 rounded-full mb-3">
+        <span>🏛️ Statutory Authorities</span>
+        <span>•</span>
+        <span>Primary Legislation</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-serif font-bold text-stone-900 dark:text-stone-50 tracking-tight leading-tight">
+        Indian Financial Regulators & Governing Laws
+      </h1>
+      <p class="text-base sm:text-lg text-stone-600 dark:text-stone-300 max-w-4xl mt-3 font-sans leading-relaxed">
+        Every legal investment avenue in India operates under the statutory purview of a designated federal regulatory body. Below is the constitutional and legislative mapping.
+      </p>
+    </header>
+
+    <div class="space-y-8">
+      <!-- Regulator 1: SEBI -->
+      <section class="p-6 rounded-xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 shadow-xs space-y-3">
+        <div class="flex items-center justify-between border-b border-stone-100 dark:border-stone-800 pb-3">
+          <div class="flex items-center space-x-3">
+            <span class="text-2xl">📈</span>
+            <h2 class="text-xl font-serif font-bold text-stone-900 dark:text-stone-100">
+              Securities and Exchange Board of India (SEBI)
+            </h2>
+          </div>
+          <a href="https://www.sebi.gov.in" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-amber-600 hover:underline">sebi.gov.in ↗</a>
+        </div>
+        <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
+          <strong>Mandate:</strong> Established under the <em>SEBI Act, 1992</em>. Protects the interests of investors in securities, regulates stock exchanges (NSE, BSE, MCX), depositories (NSDL, CDSL), mutual funds, alternative investment funds (AIFs), REITs, InvITs, Portfolio Managers (PMS), and registered intermediaries.
+        </p>
+        <div class="text-xs text-stone-500 space-y-1">
+          <div><strong>Core Statutes:</strong> SEBI Act 1992, Securities Contracts (Regulation) Act 1956 (SCRA), Depositories Act 1996.</div>
+          <div><strong>Grievance Redressal:</strong> SCORES 2.0 (<a href="https://scores.sebi.gov.in" class="text-amber-600 underline">scores.sebi.gov.in</a>) and SMART ODR platform.</div>
+        </div>
+      </section>
+
+      <!-- Regulator 2: RBI -->
+      <section class="p-6 rounded-xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 shadow-xs space-y-3">
+        <div class="flex items-center justify-between border-b border-stone-100 dark:border-stone-800 pb-3">
+          <div class="flex items-center space-x-3">
+            <span class="text-2xl">🏦</span>
+            <h2 class="text-xl font-serif font-bold text-stone-900 dark:text-stone-100">
+              Reserve Bank of India (RBI)
+            </h2>
+          </div>
+          <a href="https://www.rbi.org.in" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-amber-600 hover:underline">rbi.org.in ↗</a>
+        </div>
+        <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
+          <strong>Mandate:</strong> Central banking authority established under the <em>RBI Act, 1934</em>. Regulates monetary policy, commercial banks, cooperative banks, Non-Banking Financial Companies (NBFCs), Peer-to-Peer (P2P) lending platforms, housing finance companies, foreign exchange management (FEMA), and retail access to Government Securities (RBI Retail Direct).
+        </p>
+        <div class="text-xs text-stone-500 space-y-1">
+          <div><strong>Core Statutes:</strong> RBI Act 1934, Banking Regulation Act 1949, FEMA 1999, Payment and Settlement Systems Act 2007.</div>
+          <div><strong>Retail Portals:</strong> RBI Retail Direct (<a href="https://rbiretaildirect.org.in" class="text-amber-600 underline">rbiretaildirect.org.in</a>) and Sachet (<a href="https://sachet.rbi.org.in" class="text-amber-600 underline">sachet.rbi.org.in</a>).</div>
+        </div>
+      </section>
+
+      <!-- Regulator 3: PFRDA -->
+      <section class="p-6 rounded-xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 shadow-xs space-y-3">
+        <div class="flex items-center justify-between border-b border-stone-100 dark:border-stone-800 pb-3">
+          <div class="flex items-center space-x-3">
+            <span class="text-2xl">👴</span>
+            <h2 class="text-xl font-serif font-bold text-stone-900 dark:text-stone-100">
+              Pension Fund Regulatory & Development Authority (PFRDA)
+            </h2>
+          </div>
+          <a href="https://www.pfrda.org.in" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-amber-600 hover:underline">pfrda.org.in ↗</a>
+        </div>
+        <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
+          <strong>Mandate:</strong> Statutory body established under the <em>PFRDA Act, 2013</em> to promote, develop, and regulate the pension sector in India. Oversees the National Pension System (NPS Tier-1 and Tier-2), Atal Pension Yojana (APY), and regulates Pension Fund Managers (SBI, LIC, HDFC, ICICI, UTI).
+        </p>
+        <div class="text-xs text-stone-500">
+          <strong>Key Link:</strong> NPS Trust (<a href="https://npstrust.org.in" class="text-amber-600 underline">npstrust.org.in</a>).
+        </div>
+      </section>
+
+      <!-- Regulator 4: IRDAI -->
+      <section class="p-6 rounded-xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 shadow-xs space-y-3">
+        <div class="flex items-center justify-between border-b border-stone-100 dark:border-stone-800 pb-3">
+          <div class="flex items-center space-x-3">
+            <span class="text-2xl">🛡️</span>
+            <h2 class="text-xl font-serif font-bold text-stone-900 dark:text-stone-100">
+              Insurance Regulatory and Development Authority of India (IRDAI)
+            </h2>
+          </div>
+          <a href="https://www.irdai.gov.in" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-amber-600 hover:underline">irdai.gov.in ↗</a>
+        </div>
+        <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
+          <strong>Mandate:</strong> Statutory body formed under the <em>Insurance Regulatory and Development Authority Act, 1999</em>. Regulates life insurance, health insurance, and general insurance companies, ensures solvency margins, and protects policyholder interests.
+        </p>
+        <div class="text-xs text-stone-500">
+          <strong>Grievance Portal:</strong> Bima Bharosa portal.
+        </div>
+      </section>
+    </div>
+  </div>
+</BaseLayout>

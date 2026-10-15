@@ -1,0 +1,126 @@
+---
+title: "The Ultimate Guide to Indian Mutual Funds & ETFs: Mechanics, SEBI Rules, and True Costs"
+description: "Complete quantitative breakdown of all 36+ SEBI fund categories, active vs passive math, TER commission drag in regular vs direct plans, and capital gains taxation."
+series: "Series 02: Mutual Funds & ETFs Architecture"
+seriesOrder: 1
+assetClass: ["Mutual Funds"]
+riskTier: 3
+difficulty: 2
+verifiedOn: "2026-10-15"
+---
+import PostLayout from '../../layouts/PostLayout.astro';
+import Callout from '../../components/Callout.astro';
+import Cite from '../../components/Cite.astro';
+import Mermaid from '../../components/Mermaid.astro';
+
+<PostLayout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  series={frontmatter.series}
+  seriesOrder={frontmatter.seriesOrder}
+  assetClass={frontmatter.assetClass}
+  riskTier={frontmatter.riskTier}
+  difficulty={frontmatter.difficulty}
+  verifiedOn={frontmatter.verifiedOn}
+>
+
+## 1. TL;DR & Quantitative Overview
+
+<div class="p-5 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-900/50 shadow-xs my-6 space-y-3 font-sans">
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
+    <div>
+      <span class="text-stone-500 block">SEBI Regulated Categories</span>
+      <strong class="text-base text-stone-900 dark:text-stone-100 font-mono">36+ Standard Classes</strong>
+      <span class="text-[10px] text-stone-400 block">Categorization Circular 2017</span>
+    </div>
+    <div>
+      <span class="text-stone-500 block">Direct vs Regular Drag</span>
+      <strong class="text-base text-red-600 font-mono">0.6% – 1.4% p.a.</strong>
+      <span class="text-[10px] text-stone-400 block">25% wealth loss over 25 yrs</span>
+    </div>
+    <div>
+      <span class="text-stone-500 block">Equity Fund LTCG Tax</span>
+      <strong class="text-base text-emerald-600 font-mono">12.5% (&gt;12 months)</strong>
+      <span class="text-[10px] text-stone-400 block">Sec 112A (Above ₹1.25L)</span>
+    </div>
+    <div>
+      <span class="text-stone-500 block">Debt Fund Tax (Sec 50AA)</span>
+      <strong class="text-base text-amber-600 font-mono">Marginal Slab Rate</strong>
+      <span class="text-[10px] text-stone-400 block">No indexation post April 2023</span>
+    </div>
+  </div>
+</div>
+
+Mutual funds and Exchange Traded Funds (ETFs) are the principal vehicle through which millions of Indian households deploy institutional capital. However, behind the simple user interfaces of modern fintech apps lies a complex regulatory structure, subtle expense ratio drags, and stark tax differences between equity-oriented and specified debt mutual funds.
+
+---
+
+## 2. Institutional Architecture: The Three-Tier Trust Model
+
+Unlike corporate entities, an Indian mutual fund is legally constituted as a **Trust** under the *Indian Trusts Act, 1882*. The assets of the unitholders are completely ring-fenced from the operating company that manages the investments.
+
+<Mermaid title="Indian Mutual Fund Three-Tier Regulatory Architecture (SEBI Mandated)">
+{`flowchart TD
+    Sponsor[Mutual Fund Sponsor: e.g. HDFC / SBI / ICICI] -->|Establishes| Trust[Mutual Fund Board of Trustees]
+    Trust -->|Appoints & Monitors| AMC[Asset Management Company: Fund Managers & Analysts]
+    Trust -->|Appoints Independent Third-Party| Custodian[SEBI-Registered Custodian: Holds Physical/Demat Securities]
+    Investor[Retail & Institutional Unitholders] -->|Deploy Capital| SchemePool[Scheme Portfolio Pool]
+    SchemePool -->|Custody of Assets| Custodian
+    AMC -->|Issues Buy/Sell Orders| SchemePool`}
+</Mermaid>
+
+---
+
+## 3. SEBI Mutual Fund Categorization Matrix
+
+To eliminate confusing scheme names and misleading marketing, SEBI’s historic 2017 Categorization Circular harmonized mutual funds into five broad umbrellas:
+
+### A. Equity Schemes
+1. **Large Cap Fund:** Minimum 80% in top 100 stocks by market cap.
+2. **Mid Cap Fund:** Minimum 65% in 101st to 250th stocks.
+3. **Small Cap Fund:** Minimum 65% in 251st company onwards.
+4. **Flexi Cap Fund:** Minimum 65% in equity across large, mid, and small caps with total dynamic flexibility.
+5. **ELSS (Equity Linked Savings Scheme):** Minimum 80% in equity, 3-year statutory lock-in; eligible for Section 80C deduction under the Old Tax Regime.
+
+### B. Debt Schemes
+- **Liquid Funds:** Debt instruments with maturity up to 91 days.
+- **Target Maturity Funds (TMFs):** Passively managed debt index funds mirroring sovereign G-Secs or AAA public sector bonds with fixed maturity dates.
+
+---
+
+## 4. The Mathematics of Expense Ratios: Regular vs Direct Plans
+
+Every mutual fund scheme offers two options:
+- **Direct Plan:** Invest directly with the AMC. Zero distributor commission.
+- **Regular Plan:** Purchased through a mutual fund distributor (MFD) or bank.
+
+### Mathematical Derivation of Commission Drag
+The terminal corpus after $T$ years under nominal gross return $r$ and expense ratio $E$ is given by:
+$$V(T) = P_0 \times (1 + r - E)^T$$
+
+<Callout type="warning" title="25.4% Capital Forfeited to Intermediary Trail Commissions">
+  A 1.2% difference in Total Expense Ratio results in you forfeiting over **25% of your total lifetime wealth** to the distributor! On a ₹1 Crore accumulated corpus, that is ₹25 Lakhs lost in friction. Always choose **Direct Growth** plans.
+</Callout>
+
+---
+
+## 5. Statutory Taxation by Mutual Fund Asset Class (FY 2026-27)
+
+<Callout type="tax" title="Taxation Treatment Under Sections 112A, 111A, and 50AA">
+  1. **Equity-Oriented Funds ($>65\%$ Domestic Equity):**
+     - **STCG ($\le 12$ months):** Flat 20% (Section 111A).
+     - **LTCG ($> 12$ months):** 12.5% on gains exceeding ₹1.25 Lakhs per FY (Section 112A).
+  2. **Specified Debt Mutual Funds ($<35\%$ Domestic Equity):**
+     - Governed by **Section 50AA**.
+     - All gains are deemed Short-Term Capital Gains, taxed at the investor's marginal slab rate.
+</Callout>
+
+---
+
+## 6. Primary Citations & Regulatory References
+
+1. <Cite source="SEBI Mutual Fund Regulations 1996" url="https://www.sebi.gov.in" accessed="2026-10-15" /> — Gazette Notification No. S.O. 856(E).
+2. <Cite source="AMFI India" url="https://www.amfiindia.com" accessed="2026-10-15" /> — Association of Mutual Funds in India Industry Asset Data.
+3. *Let's Talk Mutual Funds* by Monika Halan (HarperCollins 2021).
+
+</PostLayout>

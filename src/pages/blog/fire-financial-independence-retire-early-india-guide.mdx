@@ -1,0 +1,87 @@
+---
+title: "Financial Independence, Retire Early (FIRE) in India: Safe Withdrawal Rates and Inflation Realities"
+description: "Adapting the Trinity study to the Indian economic reality: why 6%–7% consumer inflation and sequence-of-returns risk demand a 3.0%–3.25% Indian SWR, healthcare buffers, and the 3-bucket strategy."
+series: "Series 07: Indian Personal Finance, FIRE & Asset Allocation"
+seriesOrder: 1
+assetClass: ["Personal Finance"]
+riskTier: 2
+difficulty: 3
+verifiedOn: "2026-10-15"
+---
+import PostLayout from '../../layouts/PostLayout.astro';
+import Callout from '../../components/Callout.astro';
+import Cite from '../../components/Cite.astro';
+import Mermaid from '../../components/Mermaid.astro';
+
+<PostLayout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  series={frontmatter.series}
+  seriesOrder={frontmatter.seriesOrder}
+  assetClass={frontmatter.assetClass}
+  riskTier={frontmatter.riskTier}
+  difficulty={frontmatter.difficulty}
+  verifiedOn={frontmatter.verifiedOn}
+>
+
+## 1. TL;DR & Quantitative Overview
+
+<div class="p-5 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-900/50 shadow-xs my-6 space-y-3 font-sans">
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
+    <div>
+      <span class="text-stone-500 block">Indian Safe Withdrawal Rate</span>
+      <strong class="text-base text-stone-900 dark:text-stone-100 font-mono">2.75% – 3.25%</strong>
+      <span class="text-[10px] text-stone-400 block">The US 4% Rule Fails in India</span>
+    </div>
+    <div>
+      <span class="text-stone-500 block">Baseline Consumer Inflation</span>
+      <strong class="text-base text-red-600 font-mono">6.0% – 7.0% p.a.</strong>
+      <span class="text-[10px] text-stone-400 block">Medical inflation &approx; 12%–14%</span>
+    </div>
+    <div>
+      <span class="text-stone-500 block">Recommended Nest Egg</span>
+      <strong class="text-base text-emerald-600 font-mono">33x to 36x Expenses</strong>
+      <span class="text-[10px] text-stone-400 block">+ Separate Medical Contingency</span>
+    </div>
+    <div>
+      <span class="text-stone-500 block">Retirement Structure</span>
+      <strong class="text-base text-amber-600 font-mono">3-Bucket Strategy</strong>
+      <span class="text-[10px] text-stone-400 block">Immunizes Sequence-of-Returns</span>
+    </div>
+  </div>
+</div>
+
+The global Financial Independence, Retire Early (FIRE) movement relies heavily on the famous 1998 Trinity Study, which popularized the "4% Rule" of thumb. However, copy-pasting American financial assumptions into the Indian macroeconomic environment is an invitation to terminal financial ruin.
+
+---
+
+## 2. Why the American 4% Rule Fails Catastrophically in India
+
+<Callout type="warning" title="The Three Macro Hazards of Indian Early Retirement">
+  1. **Persistent High Inflation:** Indian CPI inflation averages 6.0% to 7.0%, while urban healthcare inflation compounds at **12% to 14% annually**.
+  2. **Sequence-of-Returns Risk (SRR):** If an early retiree encounters a 2008-style 55% market crash during their first 3 years of retirement while withdrawing living expenses, the portfolio experiences irreversible capital depletion.
+  3. **Extended Longevity Runway:** Early retirement at age 35 to 45 implies a multi-decade withdrawal runway of 45 to 55 years.
+</Callout>
+
+---
+
+## 3. The 3-Bucket Execution Strategy
+
+<Mermaid title="Indian Early Retirement Three-Bucket Cash-Flow Architecture">
+{`flowchart TD
+    TotalPortfolio[Retirement Nest Egg: 33x-35x Expenses] --> Bucket1[Bucket 1: Immediate Cash & Liquidity]
+    TotalPortfolio --> Bucket2[Bucket 2: Fixed Income Stability Anchor]
+    TotalPortfolio --> Bucket3[Bucket 3: Long-Term Growth Compounder]
+    Bucket1 --> B1Desc[Years 1-3 Expenses: Bank Sweep FDs & Liquid MFs]
+    Bucket2 --> B2Desc[Years 4-8 Expenses: G-Sec Ladders & TMFs]
+    Bucket3 --> B3Desc[Years 9+ Horizon: Broad Indian Equity Index Funds]`}
+</Mermaid>
+
+---
+
+## 4. Primary Citations & References
+
+1. *The Psychology of Money* by Morgan Housel (Harriman House 2020).
+2. *Let's Talk Money* by Monika Halan (HarperCollins 2018).
+
+</PostLayout>

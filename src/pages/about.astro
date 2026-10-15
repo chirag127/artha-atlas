@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<BaseLayout
+  title="About Chirag Singhal & Artha Atlas"
+  description="About Chirag Singhal, author of Artha Atlas, software engineer, and quant-finance researcher based in India."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <Breadcrumbs items={[{ label: 'About the Author' }]} />
+
+    <header class="my-6 pb-6 border-b border-stone-200 dark:border-stone-800">
+      <div class="inline-flex items-center space-x-2 text-xs font-mono font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/60 border border-amber-200 dark:border-amber-900 px-3 py-1 rounded-full mb-3">
+        <span>👤 Author & Editorial Custodian</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-serif font-bold text-stone-900 dark:text-stone-50 tracking-tight leading-tight">
+        About Chirag Singhal & Artha Atlas
+      </h1>
+      <p class="text-base sm:text-lg text-stone-600 dark:text-stone-300 mt-3 font-sans leading-relaxed">
+        Building the most thorough, unvarnished, mathematically honest financial encyclopedia and quantitative comparator for Indian investors.
+      </p>
+    </header>
+
+    <div class="space-y-8 text-stone-700 dark:text-stone-300 text-sm sm:text-base leading-relaxed">
+      <section class="space-y-4">
+        <h2 class="text-2xl font-serif font-bold text-stone-900 dark:text-stone-100">
+          The Author
+        </h2>
+        <p>
+          I am <strong>Chirag Singhal</strong>, a software engineer and quantitative finance researcher living and working in India. Like many salaried engineers and professionals, I navigated the confusing maze of Indian personal finance: pushy bank relationship managers marketing endowment policies as "guaranteed pensions", finfluencers hyping illiquid SME IPOs and unregulated crypto apps, and portals presenting gross historical equity returns without disclosing the 12.5% LTCG tax, 6% consumer inflation, or catastrophic drawdowns.
+        </p>
+        <p>
+          I built <strong>Artha Atlas</strong> with a single mission: to provide the definitive, commission-free, mathematically verified guide to every investment avenue legally open to Indian citizens and NRIs.
+        </p>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="text-2xl font-serif font-bold text-stone-900 dark:text-stone-100">
+          Contact & Social Links
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
+          <div class="p-4 rounded-xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 space-y-2">
+            <div class="font-serif font-bold text-base text-stone-900 dark:text-stone-100">📧 Direct Email</div>
+            <p class="text-stone-500">For corrections, regulatory feedback, or research leads:</p>
+            <a href="mailto:chirag@oriz.in" class="text-amber-600 font-semibold hover:underline block font-mono">chirag@oriz.in</a>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 space-y-2">
+            <div class="font-serif font-bold text-base text-stone-900 dark:text-stone-100">☕ Buy Me a Coffee</div>
+            <p class="text-stone-500">Support independent, unmonetized financial research:</p>
+            <a href="https://buymeacoffee.com/chirag127" target="_blank" rel="noopener noreferrer" class="text-amber-600 font-semibold hover:underline block font-mono">buymeacoffee.com/chirag127 ↗</a>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 space-y-2">
+            <div class="font-serif font-bold text-base text-stone-900 dark:text-stone-100">🐙 GitHub Profile & Code</div>
+            <p class="text-stone-500">Open-source code, pull requests, and site architecture:</p>
+            <a href="https://github.com/chirag127" target="_blank" rel="noopener noreferrer" class="text-amber-600 font-semibold hover:underline block font-mono">github.com/chirag127 ↗</a>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 space-y-2">
+            <div class="font-serif font-bold text-base text-stone-900 dark:text-stone-100">👤 Facebook</div>
+            <p class="text-stone-500">Personal social channel:</p>
+            <a href="https://facebook.com/singhal127" target="_blank" rel="noopener noreferrer" class="text-amber-600 font-semibold hover:underline block font-mono">facebook.com/singhal127 ↗</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="text-2xl font-serif font-bold text-stone-900 dark:text-stone-100">
+          Editorial Code of Independence
+        </h2>
+        <ul class="list-disc list-inside space-y-2 text-stone-700 dark:text-stone-300">
+          <li><strong>No Referral Links / No Broker Kickbacks:</strong> Artha Atlas does not accept payment from brokerage firms, mutual fund AMCs, P2P platforms, or crypto exchanges to promote their products.</li>
+          <li><strong>Primary Statutory Citations:</strong> Every legal and tax claim is referenced against primary acts and official notifications from the Income Tax Department, SEBI, RBI, PFRDA, or IRDAI.</li>
+          <li><strong>Real Returns Over Nominal Promises:</strong> Every asset class is benchmarked after accounting for 6% Indian inflation and current capital gains tax rates.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</BaseLayout>

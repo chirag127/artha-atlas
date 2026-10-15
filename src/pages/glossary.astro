@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+
+const glossaryData = JSON.parse(fs.readFileSync(path.resolve('./src/data/glossary.json'), 'utf8'));
+const categories = ['All', ...Array.from(new Set(glossaryData.map((g: any) => g.category)))];
+---
+<BaseLayout
+  title="Financial Dictionary & Quantitative Glossary — Artha Atlas"
+  description="Searchable Indian and quantitative financial dictionary: XIRR, CAGR, Modified Duration, Sharpe Ratio, Section 50AA, LTCG, REITs, BUDS Act, and SWR."
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <Breadcrumbs items={[{ label: 'Financial Glossary' }]} />
+
+    <header class="my-6 pb-6 border-b border-stone-200 dark:border-stone-800">
+      <div class="inline-flex items-center space-x-2 text-xs font-mono font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/60 border border-amber-200 dark:border-amber-900 px-3 py-1 rounded-full mb-3">
+        <span>📖 Dictionary</span>
+        <span>•</span>
+        <span>{glossaryData.length} Core Definitions & Formulas</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-serif font-bold text-stone-900 dark:text-stone-50 tracking-tight leading-tight">
+        Financial & Quantitative Glossary
+      </h1>
+      <p class="text-base sm:text-lg text-stone-600 dark:text-stone-300 max-w-4xl mt-3 font-sans leading-relaxed">
+        Every advanced financial metric, statutory clause, and quant formula used across Artha Atlas, explained with mathematical definitions and practical Indian context.
+      </p>
+    </header>
+
+    <!-- Search & Filter Controls -->
+    <div class="mb-8 space-y-4">
+      <div class="relative">
+        <input
+          id="glossary-search"
+          type="text"
+          placeholder="Search any term, formula, or law (e.g. XIRR, 50AA, Duration, SGB)..."
+          class="w-full text-sm bg-white dark:bg-stone-900 border border-stone-300 dark:border-stone-700 rounded-xl px-4 py-3 pl-10 text-stone-900 dark:text-stone-100 shadow-xs focus:outline-none focus:ring-2 focus:ring-amber-500"
+        />
+        <svg class="w-5 h-5 text-stone-400 absolute left-3 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </div>
+
+      <div class="flex flex-wrap gap-2 text-xs font-medium">
+        {categories.map((cat, idx) => (
+          <button
+            class={`category-filter-btn px-3 py-1 rounded-lg border transition-colors ${
+              idx === 0
+                ? 'bg-amber-600 text-white border-amber-600'
+                : 'bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300 border-stone-200 dark:border-stone-700 hover:bg-stone-200'
+            }`}
+            data-category={cat}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <!-- Glossary List -->
+    <div id="glossary-list" class="space-y-4">
+      {glossaryData.map((item: any) => (
+        <div
+          class="glossary-card p-5 rounded-xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 shadow-xs space-y-2"
+          data-term={item.term.toLowerCase()}
+          data-category={item.category}
+          data-definition={item.definition.toLowerCase()}
+        >
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 pb-1 border-b border-stone-100 dark:border-stone-800">
+            <h2 class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100">
+              {item.term}
+            </h2>
+            <span class="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-amber-50 dark:bg-stone-800 text-amber-700 dark:text-amber-400 w-fit">
+              {item.category}
+            </span>
+          </div>
+
+          <p class="text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
+            {item.definition}
+          </p>
+
+          {item.formula && (
+            <div class="p-3 bg-stone-50 dark:bg-stone-950 rounded-lg border border-stone-200 dark:border-stone-800 overflow-x-auto my-2">
+              <span class="text-[10px] font-mono text-stone-400 block uppercase mb-1">Mathematical Formula:</span>
+              <div class="font-mono text-xs text-stone-800 dark:text-stone-200">
+                ${item.formula}$
+              </div>
+            </div>
+          )}
+
+          <div class="text-xs text-stone-500 dark:text-stone-400 leading-relaxed pt-1">
+            <strong class="text-stone-700 dark:text-stone-300">Why It Matters:</strong> {item.whyItMatters}
+          </div>
+
+          <div class="flex flex-wrap gap-1.5 pt-2">
+            {item.tags?.map((t: string) => (
+              <span class="text-[10px] px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-stone-500">
+                #{t}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <script is:inline>
+    const searchInput = document.getElementById('glossary-search');
+    const filterButtons = document.querySelectorAll('.category-filter-btn');
+    const cards = document.querySelectorAll('.glossary-card');
+
+    let activeCategory = 'All';
+    let searchQuery = '';
+
+    function filterGlossary() {
+      cards.forEach((card) => {
+        const term = card.getAttribute('data-term') || '';
+        const def = card.getAttribute('data-definition') || '';
+        const cat = card.getAttribute('data-category') || '';
+
+        const matchesCat = activeCategory === 'All' || cat === activeCategory;
+        const matchesQuery = !searchQuery || term.includes(searchQuery) || def.includes(searchQuery);
+
+        if (matchesCat && matchesQuery) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    searchInput?.addEventListener('input', (e) => {
+      searchQuery = e.target.value.toLowerCase().trim();
+      filterGlossary();
+    });
+
+    filterButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach((b) => {
+          b.classList.remove('bg-amber-600', 'text-white', 'border-amber-600');
+          b.classList.add('bg-stone-100', 'dark:bg-stone-800', 'text-stone-600', 'dark:text-stone-300', 'border-stone-200', 'dark:border-stone-700');
+        });
+        btn.classList.add('bg-amber-600', 'text-white', 'border-amber-600');
+        btn.classList.remove('bg-stone-100', 'dark:bg-stone-800', 'text-stone-600', 'dark:text-stone-300', 'border-stone-200', 'dark:border-stone-700');
+
+        activeCategory = btn.getAttribute('data-category') || 'All';
+        filterGlossary();
+      });
+    });
+  </script>
+</BaseLayout>

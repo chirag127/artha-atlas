@@ -1,0 +1,84 @@
+@import 'katex/dist/katex.min.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg: #FDFCF7;
+    --color-card: #FFFFFF;
+    --color-border: #E5E7EB;
+    --color-ink: #111827;
+    --color-muted: #4B5563;
+    --color-header-bg: rgba(253, 252, 247, 0.85);
+  }
+
+  .dark {
+    --color-bg: #0B0F17;
+    --color-card: #111827;
+    --color-border: #1F2937;
+    --color-ink: #F3F4F6;
+    --color-muted: #9CA3AF;
+    --color-header-bg: rgba(11, 15, 23, 0.85);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .font-tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom Editorial Callouts */
+.callout {
+  @apply my-6 p-4 rounded-lg border-l-4 transition-all duration-200;
+}
+.callout-insight {
+  @apply bg-amber-500/10 border-amber-500 text-amber-950 dark:text-amber-100;
+}
+.callout-tax {
+  @apply bg-emerald-500/10 border-emerald-500 text-emerald-950 dark:text-emerald-100;
+}
+.callout-warning {
+  @apply bg-red-500/10 border-red-500 text-red-950 dark:text-red-100;
+}
+.callout-advanced {
+  @apply bg-indigo-500/10 border-indigo-500 text-indigo-950 dark:text-indigo-100;
+}
+.callout-india {
+  @apply bg-orange-500/10 border-orange-500 text-orange-950 dark:text-orange-100;
+}
+
+/* KaTeX custom responsive styling */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.75rem 0;
+  margin: 1rem 0 !important;
+}
+
+/* Print Stylesheet */
+@media print {
+  header, footer, nav, .no-print, #search-modal, #theme-toggle {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}

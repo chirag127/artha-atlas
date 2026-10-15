@@ -1,0 +1,92 @@
+---
+title: "Precious Metals in Indian Wealth Preservation: Gold, Silver, ETFs, and SGB Secondary Markets"
+description: "Complete guide to gold and silver investing in India: physical jewelry friction, Gold ETFs, the legacy tax advantages of Sovereign Gold Bonds (SGBs), and industrial silver fundamentals."
+series: "Series 05: Precious Metals & Commodities"
+seriesOrder: 1
+assetClass: ["Gold & Silver"]
+riskTier: 2
+difficulty: 2
+verifiedOn: "2026-10-15"
+---
+import PostLayout from '../../layouts/PostLayout.astro';
+import Callout from '../../components/Callout.astro';
+import Cite from '../../components/Cite.astro';
+import Mermaid from '../../components/Mermaid.astro';
+
+<PostLayout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  series={frontmatter.series}
+  seriesOrder={frontmatter.seriesOrder}
+  assetClass={frontmatter.assetClass}
+  riskTier={frontmatter.riskTier}
+  difficulty={frontmatter.difficulty}
+  verifiedOn={frontmatter.verifiedOn}
+>
+
+## 1. TL;DR & Quantitative Overview
+
+<div class="p-5 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-900/50 shadow-xs my-6 space-y-3 font-sans">
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
+    <div>
+      <span class="text-stone-500 block">INR Gold 20-Yr CAGR</span>
+      <strong class="text-base text-stone-900 dark:text-stone-100 font-mono">10.2% – 11.5%</strong>
+      <span class="text-[10px] text-stone-400 block">Driven by USD gold + INR decay</span>
+    </div>
+    <div>
+      <span class="text-stone-500 block">Physical Jewelry Friction</span>
+      <strong class="text-base text-red-600 font-mono">15% – 28% Loss</strong>
+      <span class="text-[10px] text-stone-400 block">Making charges + GST + melting</span>
+    </div>
+    <div>
+      <span class="text-stone-500 block">SGB Maturity Tax</span>
+      <strong class="text-base text-emerald-600 font-mono">100% Tax-Free (0%)</strong>
+      <span class="text-[10px] text-stone-400 block">Sec 47(viic) for Individuals</span>
+    </div>
+    <div>
+      <span class="text-stone-500 block">Gold ETF LTCG Tax</span>
+      <strong class="text-base text-amber-600 font-mono">12.5% (&gt;12 months)</strong>
+      <span class="text-[10px] text-stone-400 block">Sec 112 (Listed Securities)</span>
+    </div>
+  </div>
+</div>
+
+In the Indian financial context, gold is not merely a commodity; it serves as a decentralized geopolitical insurance policy and domestic purchasing power hedge against long-term Rupee depreciation.
+
+---
+
+## 2. The Indian Gold Spectrum: Physical vs Paper vs Sovereign
+
+<Mermaid title="Indian Gold Investment Vehicle Comparison Flowchart">
+{`flowchart TD
+    Gold[Gold Capital Allocation] --> Physical[Physical Bullion / Jewelry]
+    Gold --> Paper[Electronic / Paper Gold]
+    Physical --> Jewelry[Jewelry: 12-25% Making Charges + 3% GST]
+    Physical --> Coins[Coins / Bars: 3% GST + Locker Costs]
+    Paper --> SGB[Sovereign Gold Bonds: 2.5% Coupon + Tax-Free Maturity]
+    Paper --> ETF[Gold ETFs / MFs: Backed by 99.5% Physical Vaults]`}
+</Mermaid>
+
+---
+
+## 3. Statutory Taxation of Precious Metals (FY 2026-27)
+
+<Callout type="tax" title="Current Capital Gains Rates for Gold & Silver">
+  1. **Gold & Silver ETFs (Listed Securities):**
+     - Short-Term ($\le 12$ months): Taxed at individual slab rate.
+     - Long-Term ($> 12$ months): **12.5% without indexation** under Section 112.
+  2. **Physical Gold & Silver:**
+     - Short-Term ($\le 24$ months): Taxed at individual slab rate.
+     - Long-Term ($> 24$ months): **12.5% without indexation** under Section 112.
+  3. **Sovereign Gold Bonds (SGB):**
+     - Maturity redemption with RBI: **0% Tax (100% Exempt)** under Section 47(viic).
+</Callout>
+
+---
+
+## 4. Primary Citations & References
+
+1. <Cite source="RBI SGB Operational Guidelines" url="https://www.rbi.org.in" accessed="2026-10-15" /> — RBI Sovereign Gold Bond Master Circular.
+2. <Cite source="Income Tax Sec 47(viic)" url="https://incometax.gov.in" accessed="2026-10-15" /> — Exemption of Capital Gains on SGB.
+
+</PostLayout>

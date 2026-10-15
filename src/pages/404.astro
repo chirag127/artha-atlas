@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<BaseLayout title="404 — Page Not Found — Artha Atlas">
+  <div class="min-h-[60vh] flex items-center justify-center px-4 py-16 text-center">
+    <div class="max-w-md space-y-6">
+      <div class="w-16 h-16 mx-auto rounded-2xl bg-amber-600/10 border border-amber-600/30 flex items-center justify-center text-3xl font-serif text-amber-600">
+        404
+      </div>
+      <h1 class="text-3xl font-serif font-bold text-stone-900 dark:text-stone-50">
+        Lost in the Financial Atlas?
+      </h1>
+      <p class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
+        The avenue, statutory regulation, or calculator page you are looking for has either moved or does not exist in this sector of the atlas.
+      </p>
+      <div class="pt-2 flex flex-wrap justify-center gap-3">
+        <a
+          href={`${base}/`}
+          class="px-4 py-2 rounded-lg bg-amber-600 hover:bg-amber-700 text-white font-medium text-xs transition-colors shadow-sm"
+        >
+          Return to Home
+        </a>
+        <a
+          href={`${base}/avenues/`}
+          class="px-4 py-2 rounded-lg bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 font-medium text-xs border border-stone-200 dark:border-stone-700 transition-colors"
+        >
+          Browse All Avenues
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

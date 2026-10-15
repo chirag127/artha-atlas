@@ -1,0 +1,94 @@
+---
+title: "Indian Fixed Income & Sovereign Debt: From RBI Retail Direct to High-Yield Corporate Bonds"
+description: "Complete operational and quantitative guide to Indian debt markets: sovereign yield ladders via RBI Retail Direct, corporate NCDs on SEBI OBPPs, duration risks, and the Franklin Templeton post-mortem."
+series: "Series 03: Fixed Income, Sovereign Debt & Credit"
+seriesOrder: 1
+assetClass: ["Fixed Income"]
+riskTier: 2
+difficulty: 3
+verifiedOn: "2026-10-15"
+---
+import PostLayout from '../../layouts/PostLayout.astro';
+import Callout from '../../components/Callout.astro';
+import Cite from '../../components/Cite.astro';
+import Mermaid from '../../components/Mermaid.astro';
+
+<PostLayout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  series={frontmatter.series}
+  seriesOrder={frontmatter.seriesOrder}
+  assetClass={frontmatter.assetClass}
+  riskTier={frontmatter.riskTier}
+  difficulty={frontmatter.difficulty}
+  verifiedOn={frontmatter.verifiedOn}
+>
+
+## 1. TL;DR & Quantitative Overview
+
+<div class="p-5 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-900/50 shadow-xs my-6 space-y-3 font-sans">
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
+    <div>
+      <span class="text-stone-500 block">10-Yr Benchmark G-Sec</span>
+      <strong class="text-base text-stone-900 dark:text-stone-100 font-mono">6.8% – 7.3% Yield</strong>
+      <span class="text-[10px] text-stone-400 block">Zero Sovereign Credit Risk</span>
+    </div>
+    <div>
+      <span class="text-stone-500 block">Primary Retail Portal</span>
+      <strong class="text-base text-emerald-600 font-mono">RBI Retail Direct</strong>
+      <span class="text-[10px] text-stone-400 block">Direct Gilt Account with RBI</span>
+    </div>
+    <div>
+      <span class="text-stone-500 block">Bond Duration Sensitivity</span>
+      <strong class="text-base text-amber-600 font-mono">ModDuration &approx; 7.2 yrs</strong>
+      <span class="text-[10px] text-stone-400 block">1% Rate Hike = ~7.2% Loss</span>
+    </div>
+    <div>
+      <span class="text-stone-500 block">Current Taxation</span>
+      <strong class="text-base text-stone-900 dark:text-stone-100 font-mono">Coupons @ Slab Rate</strong>
+      <span class="text-[10px] text-stone-400 block">Listed LTCG 12.5% (&gt;12m)</span>
+    </div>
+  </div>
+</div>
+
+Fixed income is the bedrock of portfolio survival. In the Indian financial landscape, fixed income spans from zero-risk sovereign instruments to high-yield, unsecured corporate debentures carrying genuine default potential.
+
+---
+
+## 2. Market Architecture: Sovereign vs Corporate Bonds
+
+<Mermaid title="Indian Fixed Income Issuance & Retail Custody Architecture">
+{`flowchart TD
+    GOI[Government of India / State Governments] -->|Primary Auctions via RBI E-Kuber| RBIRD[RBI Retail Direct Portal]
+    RBIRD -->|Direct Gilt Securities Demat| RetailGilt[Retail Gilt Account with RBI]
+    Corporate[Corporate Borrowers: AAA / AA / A Rated NBFCs] -->|Private Placement / Public Issue| OBPP[SEBI-Regulated Online Bond Platforms]
+    OBPP -->|Trade Clearing via BSE/NSE| DematCustody[Depositories: NSDL / CDSL]`}
+</Mermaid>
+
+---
+
+## 3. Mathematical Framework: Duration Sensitivity
+
+$$\text{ModDuration} = \frac{D_{\text{mac}}}{1 + \frac{y}{m}}$$
+$$\frac{\Delta P}{P} \approx - \text{ModDuration} \times \Delta y$$
+
+---
+
+## 4. The Franklin Templeton Debt Crisis (2020 Forensic Analysis)
+
+In April 2020, Franklin Templeton AMC voluntarily wound up six open-ended yield-oriented debt schemes, freezing over ₹25,000 Crores of retail capital.
+
+<Callout type="warning" title="Forensic Breakdown: The 2020 Franklin Templeton Liquidity Freeze">
+  - **The Root Cause:** The funds pursued high gross yields by concentrating heavily in illiquid, lower-rated corporate credit papers.
+  - **The Catalyst:** Following COVID-19, redemption requests surged. The secondary market for sub-AAA Indian corporate bonds completely evaporated.
+  - **The Lesson:** While unitholders eventually recovered over 100% of their principal as underlying bonds matured, the funds suffered a complete 30-month liquidity freeze. In fixed income, **credit risk is liquidity risk in disguise**.
+</Callout>
+
+---
+
+## 5. Primary Citations & Regulatory References
+
+1. <Cite source="RBI Retail Direct" url="https://rbiretaildirect.org.in" accessed="2026-10-15" /> — Reserve Bank of India Retail Direct Scheme Gazette.
+2. <Cite source="SEBI OBPP Regulations" url="https://www.sebi.gov.in" accessed="2026-10-15" /> — SEBI Circular on Online Bond Platform Providers.
+
+</PostLayout>

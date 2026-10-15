@@ -1,0 +1,273 @@
+# Artha Atlas Master Content Backlog
+# Comprehensive Indian Investment & Personal Finance Taxonomy
+version: 1.0.0
+lastUpdated: 2026-10-15
+targetCount: 320
+
+series:
+  - id: S01
+    name: "Indian Equities & Factor Investing"
+    description: "Deep dive into direct stocks, capital structure, SME listings, factor premiums, and quantitative approaches."
+  - id: S02
+    name: "Mutual Funds & ETFs Architecture"
+    description: "SEBI fund classifications, factor ETFs, tracking error, active vs passive mathematical frameworks."
+  - id: S03
+    name: "Fixed Income, Sovereign Debt & Credit"
+    description: "G-Secs, T-Bills, Corporate Bonds, OBPPs, Bond Ladders, Duration maths, and default risk."
+  - id: S04
+    name: "Real Estate, REITs & SM REITs"
+    description: "Direct real estate mechanics, rental yields, RERA, REIT/InvIT cash distributions, and capital gains exemptions."
+  - id: S05
+    name: "Precious Metals & Commodities"
+    description: "Gold, Silver, ETFs, SGB tax framework, and industrial demand dynamics."
+  - id: S06
+    name: "Alternative Assets & High-Risk Ventures"
+    description: "PMS, AIFs (Cat I/II/III), SIFs, Private Credit, P2P lending, Angel investing, and crypto/VDA."
+  - id: S07
+    name: "Indian Personal Finance, FIRE & Asset Allocation"
+    description: "Emergency funds, term/health insurance, Safe Withdrawal Rates in high-inflation India, and tax-loss harvesting."
+  - id: S08
+    name: "The Anatomy of Financial Fraud & Indian Law"
+    description: "BUDS Act, SEBI/RBI regulations, Ponzi mechanics, market manipulation, and forensic case studies."
+
+posts:
+  # Pillar Posts
+  - id: P01-equity-pillar
+    title: "The Indian Equity Landscape: Large, Mid, Small, and Micro-Cap Realities"
+    slug: "indian-equity-investing-complete-guide"
+    series: S01
+    seriesOrder: 1
+    assetClass: ["Equity"]
+    priority: "Pillar"
+    riskTier: 4
+    difficulty: 3
+    verifiedOn: "2026-10-15"
+    summary: "The definitive analysis of Indian public equity: valuation history, earnings quality, survivorship bias, and multi-cycle returns."
+
+  - id: P02-mutual-funds-pillar
+    title: "The Ultimate Guide to Indian Mutual Funds & ETFs: Mechanics, SEBI Rules, and True Costs"
+    slug: "indian-mutual-funds-and-etfs-master-guide"
+    series: S02
+    seriesOrder: 1
+    assetClass: ["Mutual Funds"]
+    priority: "Pillar"
+    riskTier: 3
+    difficulty: 2
+    verifiedOn: "2026-10-15"
+    summary: "Complete breakdown of all 36+ SEBI fund categories, TER drag, direct vs regular math, and portfolio overlap."
+
+  - id: P03-fixed-income-pillar
+    title: "Indian Fixed Income & Sovereign Debt: From RBI Retail Direct to High-Yield Corporate Bonds"
+    slug: "indian-fixed-income-and-bonds-guide"
+    series: S03
+    seriesOrder: 1
+    assetClass: ["Fixed Income"]
+    priority: "Pillar"
+    riskTier: 2
+    difficulty: 3
+    verifiedOn: "2026-10-15"
+    summary: "How to build sovereign yield ladders, navigate credit risk, use SEBI Online Bond Provider Platforms (OBPPs), and calculate YTM."
+
+  - id: P04-reits-real-estate-pillar
+    title: "Real Estate, REITs, and SM REITs in India: Direct Property vs Listed Real Estate"
+    slug: "indian-real-estate-and-reits-guide"
+    series: S04
+    seriesOrder: 1
+    assetClass: ["Real Estate", "REITs"]
+    priority: "Pillar"
+    riskTier: 3
+    difficulty: 3
+    verifiedOn: "2026-10-15"
+    summary: "Real estate mechanics, rental yield math, RERA protections, fractional ownership platforms, and REIT tax distributions."
+
+  - id: P05-gold-silver-pillar
+    title: "Precious Metals in Indian Wealth Preservation: Gold, Silver, ETFs, and SGB Secondary Markets"
+    slug: "gold-and-silver-investing-india-guide"
+    series: S05
+    seriesOrder: 1
+    assetClass: ["Gold & Silver"]
+    priority: "Pillar"
+    riskTier: 2
+    difficulty: 2
+    verifiedOn: "2026-10-15"
+    summary: "Physical jewelry vs gold ETFs vs gold mutual funds; the legacy status of Sovereign Gold Bonds and tax optimization."
+
+  - id: P06-alternatives-pillar
+    title: "High-Return Alternative Investments in India: AIFs, PMS, Private Credit, and SIFs"
+    slug: "alternative-investments-aif-pms-private-credit-india"
+    series: S06
+    seriesOrder: 1
+    assetClass: ["Alternatives", "Private Credit"]
+    priority: "Pillar"
+    riskTier: 5
+    difficulty: 4
+    verifiedOn: "2026-10-15"
+    summary: "Navigating high-ticket accredited investor avenues: fee hurdles, watermark math, liquidity locks, and credit default risk."
+
+  - id: P07-fire-india-pillar
+    title: "Financial Independence, Retire Early (FIRE) in India: Safe Withdrawal Rates and Inflation Realities"
+    slug: "fire-financial-independence-retire-early-india-guide"
+    series: S07
+    seriesOrder: 1
+    assetClass: ["Personal Finance"]
+    priority: "Pillar"
+    riskTier: 2
+    difficulty: 3
+    verifiedOn: "2026-10-15"
+    summary: "Adapting the Trinity study to India's 6-7% inflation, healthcare hyperinflation, bucket strategies, and sequence-of-returns risk."
+
+  - id: P08-fraud-law-pillar
+    title: "How Money Really Works — Legally and Illegally: Indian Financial Scams, BUDS Act, and Regulatory Red Flags"
+    slug: "financial-scams-fraud-laws-india-investor-protection"
+    series: S08
+    seriesOrder: 1
+    assetClass: ["Legal & Fraud"]
+    priority: "Pillar"
+    riskTier: 5
+    difficulty: 3
+    verifiedOn: "2026-10-15"
+    summary: "Forensic study of Ponzi schemes, multi-level marketing, unauthorized deposit taking under BUDS Act 2019, and case studies (Saradha, PACL, Sahara)."
+
+  # Deep Dive Series Posts (Sample of structured backlog)
+  - id: S01-02
+    title: "SME IPOs and SME Platforms in India: High Growth vs Massive Liquidity and Manipulation Risks"
+    slug: "sme-ipo-investing-risks-rewards-india"
+    series: S01
+    seriesOrder: 2
+    assetClass: ["Equity"]
+    priority: "Series"
+    riskTier: 5
+    difficulty: 4
+    verifiedOn: "2026-10-15"
+
+  - id: S01-03
+    title: "Factor Investing in India: Value, Momentum, Quality, and Low Volatility Empirical Evidence"
+    slug: "factor-investing-india-momentum-value-quality"
+    series: S01
+    seriesOrder: 3
+    assetClass: ["Equity"]
+    priority: "Series"
+    riskTier: 4
+    difficulty: 4
+    verifiedOn: "2026-10-15"
+
+  - id: S02-02
+    title: "Active vs Passive Mutual Funds in India: SPIVA Scorecards, Large Cap Alpha Decay, and Tracking Errors"
+    slug: "active-vs-passive-investing-india-spiva-analysis"
+    series: S02
+    seriesOrder: 2
+    assetClass: ["Mutual Funds"]
+    priority: "Series"
+    riskTier: 3
+    difficulty: 3
+    verifiedOn: "2026-10-15"
+
+  - id: S03-02
+    title: "RBI Retail Direct Demystified: Buying G-Secs, T-Bills, and State Development Loans (SDLs) Directly"
+    slug: "rbi-retail-direct-gsecs-tbills-sdls-tutorial"
+    series: S03
+    seriesOrder: 2
+    assetClass: ["Fixed Income"]
+    priority: "Series"
+    riskTier: 1
+    difficulty: 2
+    verifiedOn: "2026-10-15"
+
+  - id: S03-03
+    title: "Post Office Small Savings Schemes: PPF, Sukanya Samriddhi, SCSS, and NSC Analyzed"
+    slug: "post-office-small-savings-schemes-ppf-ssy-scss"
+    series: S03
+    seriesOrder: 3
+    assetClass: ["Fixed Income"]
+    priority: "Series"
+    riskTier: 1
+    difficulty: 1
+    verifiedOn: "2026-10-15"
+
+  - id: S04-02
+    title: "Small & Medium REITs (SM REITs) in India: SEBI Regulations, Minimum Tickets, and Fractional Real Estate"
+    slug: "sm-reits-sebi-regulations-fractional-real-estate-india"
+    series: S04
+    seriesOrder: 2
+    assetClass: ["Real Estate", "REITs"]
+    priority: "Series"
+    riskTier: 4
+    difficulty: 3
+    verifiedOn: "2026-10-15"
+
+  - id: S06-02
+    title: "Peer-to-Peer (P2P) Lending in India: RBI Master Directions, Escrow Norms, and Actual Default Rates"
+    slug: "p2p-lending-india-rbi-regulations-default-rates"
+    series: S06
+    seriesOrder: 2
+    assetClass: ["P2P & Private Credit"]
+    priority: "Series"
+    riskTier: 5
+    difficulty: 3
+    verifiedOn: "2026-10-15"
+
+  - id: S06-03
+    title: "Futures & Options (F&O) in India: The Quant Realities Behind SEBI's 93% Retail Loss Statistic"
+    slug: "derivatives-fo-trading-india-retail-loss-math"
+    series: S06
+    seriesOrder: 3
+    assetClass: ["Derivatives"]
+    priority: "Series"
+    riskTier: 5
+    difficulty: 4
+    verifiedOn: "2026-10-15"
+
+  - id: S06-04
+    title: "Crypto and Virtual Digital Assets (VDA) in India: 30% Flat Tax, 1% TDS, and SEBI/RBI Warnings"
+    slug: "crypto-vda-taxation-laws-risks-india"
+    series: S06
+    seriesOrder: 4
+    assetClass: ["Crypto / VDA"]
+    priority: "Series"
+    riskTier: 5
+    difficulty: 3
+    verifiedOn: "2026-10-15"
+
+  - id: S07-02
+    title: "The Indian Tax Regime Showdown: Old Regime vs New Regime Mathematical Optimization"
+    slug: "income-tax-old-vs-new-regime-calculator-guide"
+    series: S07
+    seriesOrder: 2
+    assetClass: ["Tax"]
+    priority: "Series"
+    riskTier: 1
+    difficulty: 2
+    verifiedOn: "2026-10-15"
+
+  - id: S07-03
+    title: "National Pension System (NPS): Tier 1, Tier 2, Active vs Auto Choice, and Annuity Mandates"
+    slug: "national-pension-system-nps-tier-1-tier-2-complete-guide"
+    series: S07
+    seriesOrder: 3
+    assetClass: ["Personal Finance", "Fixed Income"]
+    priority: "Series"
+    riskTier: 2
+    difficulty: 2
+    verifiedOn: "2026-10-15"
+
+  - id: S08-02
+    title: "Anatomy of Pump-and-Dump and Front-Running in Indian Equities: SEBI Orders and Red Flags"
+    slug: "pump-and-dump-front-running-sebi-enforcement-case-studies"
+    series: S08
+    seriesOrder: 2
+    assetClass: ["Legal & Fraud"]
+    priority: "Series"
+    riskTier: 5
+    difficulty: 3
+    verifiedOn: "2026-10-15"
+
+  - id: S08-03
+    title: "The Franklin Templeton Debt Crisis: Anatomy of a Liquidity Freeze, Side-Pocketing, and Lessons"
+    slug: "franklin-templeton-debt-fund-crisis-case-study"
+    series: S08
+    seriesOrder: 3
+    assetClass: ["Legal & Fraud", "Fixed Income"]
+    priority: "Series"
+    riskTier: 4
+    difficulty: 4
+    verifiedOn: "2026-10-15"

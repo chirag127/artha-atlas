@@ -1,0 +1,32 @@
+---
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<nav aria-label="Breadcrumb" class="my-4 text-xs font-medium text-stone-500 dark:text-stone-400">
+  <ol class="flex items-center space-x-2 flex-wrap">
+    <li>
+      <a href={`${base}/`} class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Home</a>
+    </li>
+    {items.map((item) => (
+      <li class="flex items-center space-x-2">
+        <span class="text-stone-300 dark:text-stone-600">/</span>
+        {item.href ? (
+          <a href={item.href} class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">
+            {item.label}
+          </a>
+        ) : (
+          <span class="text-stone-900 dark:text-stone-100 font-semibold">{item.label}</span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>

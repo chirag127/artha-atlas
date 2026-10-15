@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Callout from '../components/Callout.astro';
+---
+<BaseLayout
+  title="Indian Tax Centre (FY 2026-27) — Artha Atlas"
+  description="Definitive Indian capital gains taxation guide for FY 2026-27: holding periods, LTCG and STCG rates, Section 50AA debt rules, real estate grandfathering, and ITR schedules."
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <Breadcrumbs items={[{ label: 'Indian Tax Centre (FY 2026-27)' }]} />
+
+    <header class="my-6 pb-6 border-b border-stone-200 dark:border-stone-800">
+      <div class="inline-flex items-center space-x-2 text-xs font-mono font-semibold text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-900 px-3 py-1 rounded-full mb-3">
+        <span>⚖️ Verified for Indian FY 2026-27</span>
+        <span>•</span>
+        <span>Assessment Year 2027-28</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-serif font-bold text-stone-900 dark:text-stone-50 tracking-tight leading-tight">
+        Indian Capital Gains & Income Tax Centre
+      </h1>
+      <p class="text-base sm:text-lg text-stone-600 dark:text-stone-300 max-w-4xl mt-3 font-sans leading-relaxed">
+        Tax friction is the silent killer of compounding. Below is the statutory classification of all asset classes, holding periods, applicable tax rates, and filing schedules under current law.
+      </p>
+    </header>
+
+    <div class="space-y-10">
+      <!-- Master Tax Summary Table -->
+      <section class="space-y-4">
+        <h2 class="text-2xl font-serif font-bold text-stone-900 dark:text-stone-100">
+          Statutory Capital Gains Matrix by Asset Class
+        </h2>
+
+        <div class="overflow-x-auto rounded-xl border border-stone-200 dark:border-stone-800 shadow-xs bg-white dark:bg-stone-900">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead class="bg-stone-50 dark:bg-stone-950 text-stone-500 uppercase tracking-wider font-semibold border-b border-stone-200 dark:border-stone-800">
+              <tr>
+                <th class="p-3">Asset Class</th>
+                <th class="p-3">STCG Threshold</th>
+                <th class="p-3">STCG Rate</th>
+                <th class="p-3">LTCG Threshold</th>
+                <th class="p-3">LTCG Rate</th>
+                <th class="p-3">Indexation?</th>
+                <th class="p-3">ITR Schedule</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-stone-100 dark:divide-stone-800 text-stone-700 dark:text-stone-300">
+              <tr>
+                <td class="p-3 font-semibold text-stone-900 dark:text-stone-100">
+                  Listed Equity & Equity MFs (STT Paid)
+                  <span class="block text-[10px] text-stone-500">Sec 111A / 112A</span>
+                </td>
+                <td class="p-3 font-mono">&le; 12 Months</td>
+                <td class="p-3 font-mono font-semibold text-amber-600">20%</td>
+                <td class="p-3 font-mono">&gt; 12 Months</td>
+                <td class="p-3 font-mono font-semibold text-emerald-600">12.5% (above ₹1.25L exemption)</td>
+                <td class="p-3 text-red-500 font-medium">No</td>
+                <td class="p-3 font-mono text-stone-500">Schedule CG (111A/112A)</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold text-stone-900 dark:text-stone-100">
+                  Unlisted Shares & Pre-IPO Equity
+                  <span class="block text-[10px] text-stone-500">Sec 112</span>
+                </td>
+                <td class="p-3 font-mono">&le; 24 Months</td>
+                <td class="p-3 font-mono">Slab Rate</td>
+                <td class="p-3 font-mono">&gt; 24 Months</td>
+                <td class="p-3 font-mono font-semibold text-emerald-600">12.5%</td>
+                <td class="p-3 text-red-500 font-medium">No</td>
+                <td class="p-3 font-mono text-stone-500">Schedule CG</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold text-stone-900 dark:text-stone-100">
+                  Specified Debt MFs (&lt;35% Equity)
+                  <span class="block text-[10px] text-stone-500">Sec 50AA</span>
+                </td>
+                <td class="p-3 font-mono">Any Duration</td>
+                <td class="p-3 font-mono font-semibold text-red-600">Slab Rate</td>
+                <td class="p-3 font-mono">N/A</td>
+                <td class="p-3 font-mono font-semibold text-red-600">Slab Rate</td>
+                <td class="p-3 text-red-500 font-medium">No</td>
+                <td class="p-3 font-mono text-stone-500">Schedule CG (Short-Term)</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold text-stone-900 dark:text-stone-100">
+                  Real Estate (Land & Buildings)
+                  <span class="block text-[10px] text-stone-500">Sec 112 / Sec 54</span>
+                </td>
+                <td class="p-3 font-mono">&le; 24 Months</td>
+                <td class="p-3 font-mono">Slab Rate</td>
+                <td class="p-3 font-mono">&gt; 24 Months</td>
+                <td class="p-3 font-mono font-semibold text-emerald-600">12.5% (or 20% with indexation if bought pre-23 July 2024)</td>
+                <td class="p-3 text-amber-600 font-medium">Grandfathered Only</td>
+                <td class="p-3 font-mono text-stone-500">Schedule CG</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold text-stone-900 dark:text-stone-100">
+                  Physical Gold & Jewellery
+                  <span class="block text-[10px] text-stone-500">Sec 112</span>
+                </td>
+                <td class="p-3 font-mono">&le; 24 Months</td>
+                <td class="p-3 font-mono">Slab Rate</td>
+                <td class="p-3 font-mono">&gt; 24 Months</td>
+                <td class="p-3 font-mono font-semibold text-emerald-600">12.5%</td>
+                <td class="p-3 text-red-500 font-medium">No</td>
+                <td class="p-3 font-mono text-stone-500">Schedule CG</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold text-stone-900 dark:text-stone-100">
+                  Gold & Silver ETFs
+                  <span class="block text-[10px] text-stone-500">Sec 112</span>
+                </td>
+                <td class="p-3 font-mono">&le; 12 Months</td>
+                <td class="p-3 font-mono">Slab Rate</td>
+                <td class="p-3 font-mono">&gt; 12 Months</td>
+                <td class="p-3 font-mono font-semibold text-emerald-600">12.5%</td>
+                <td class="p-3 text-red-500 font-medium">No</td>
+                <td class="p-3 font-mono text-stone-500">Schedule CG</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold text-stone-900 dark:text-stone-100">
+                  Sovereign Gold Bonds (SGB)
+                  <span class="block text-[10px] text-stone-500">Sec 47(viic)</span>
+                </td>
+                <td class="p-3 font-mono">Secondary: &le;12m</td>
+                <td class="p-3 font-mono">Slab Rate</td>
+                <td class="p-3 font-mono">Maturity (8 Yrs)</td>
+                <td class="p-3 font-mono font-bold text-emerald-600">100% EXEMPT (0% Tax)</td>
+                <td class="p-3 text-stone-400">N/A</td>
+                <td class="p-3 font-mono text-stone-500">Schedule EI (Exempt Income)</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold text-stone-900 dark:text-stone-100">
+                  Virtual Digital Assets (Crypto / NFT)
+                  <span class="block text-[10px] text-stone-500">Sec 115BBH / Sec 194S</span>
+                </td>
+                <td class="p-3 font-mono">Any Duration</td>
+                <td class="p-3 font-mono font-semibold text-red-600">30% Flat (+4% Cess)</td>
+                <td class="p-3 font-mono">Any Duration</td>
+                <td class="p-3 font-mono font-semibold text-red-600">30% Flat (+4% Cess)</td>
+                <td class="p-3 text-red-500 font-medium">No</td>
+                <td class="p-3 font-mono text-stone-500">Schedule VDA</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Key Tax Strategies & Nuances -->
+      <section class="space-y-6">
+        <h2 class="text-2xl font-serif font-bold text-stone-900 dark:text-stone-100">
+          Tax Optimization Strategies & Statutory Exemptions
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
+          <div class="p-5 rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 space-y-2">
+            <h3 class="font-serif font-bold text-base text-stone-900 dark:text-stone-100">
+              🌾 Annual Tax-Gains Harvesting (₹1.25 Lakhs)
+            </h3>
+            <p class="text-stone-600 dark:text-stone-400 leading-relaxed">
+              Under Section 112A, the first ₹1,25,000 of LTCG on listed equities and equity mutual funds is completely tax-free every financial year. By booking and immediately reinvesting ₹1.25L of accumulated capital gains each March, you systematically reset your cost basis upwards without incurring any tax liability.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 space-y-2">
+            <h3 class="font-serif font-bold text-base text-stone-900 dark:text-stone-100">
+              📉 Tax-Loss Harvesting & Set-Off Rules
+            </h3>
+            <p class="text-stone-600 dark:text-stone-400 leading-relaxed">
+              Long-term capital losses (LTCL) can only be set off against long-term capital gains (LTCG). Short-term capital losses (STCL), however, can be set off against BOTH STCG and LTCG. Unabsorbed losses can be carried forward for up to 8 assessment years, provided your ITR is filed on or before the due date under Section 139(1).
+            </p>
+          </div>
+
+          <div class="p-5 rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 space-y-2">
+            <h3 class="font-serif font-bold text-base text-stone-900 dark:text-stone-100">
+              🏡 Section 54 & 54EC Reinvestment Shelters
+            </h3>
+            <p class="text-stone-600 dark:text-stone-400 leading-relaxed">
+              LTCG from residential property can be exempted under Section 54 by purchasing another residential property within 2 years (or constructing within 3 years), capped at ₹10 Crores. Alternatively, Section 54EC allows investing up to ₹50 Lakhs in specified REC/PFC/NHAI bonds within 6 months of transfer (5-year lock-in at ~5.25% taxable interest).
+            </p>
+          </div>
+
+          <div class="p-5 rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 space-y-2">
+            <h3 class="font-serif font-bold text-base text-stone-900 dark:text-stone-100">
+              💼 Old Regime vs New Regime Thresholds
+            </h3>
+            <p class="text-stone-600 dark:text-stone-400 leading-relaxed">
+              Under the default New Tax Regime, no deductions are permitted for 80C (PPF/ELSS), 80D (health insurance), or self-occupied home loan interest (Section 24b). However, the tax rebate under Section 87A makes income up to ₹7 Lakhs effectively tax-free (with a ₹75,000 standard deduction for salaried individuals).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <Callout type="tax" title="Important Statutory Warning on Crypto (Section 115BBH)">
+        Unlike all other asset classes in India, Virtual Digital Assets (VDAs) carry zero loss set-off privileges. If you earn ₹5 Lakhs profit trading Bitcoin and suffer a ₹5 Lakh loss trading Ethereum, you still owe 30% tax on the ₹5 Lakh Bitcoin profit (₹1.5 Lakhs tax + cess)! Never trade crypto without recognizing this asymmetric taxation structure.
+      </Callout>
+    </div>
+  </div>
+</BaseLayout>
