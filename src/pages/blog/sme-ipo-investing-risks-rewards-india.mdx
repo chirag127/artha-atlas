@@ -76,8 +76,8 @@ On the mainboard, once a company lists, trading occurs on a single-share basis: 
 
 In sharp contrast, **SME shares can ONLY be traded in whole lot sizes**:
 
-```mermaid
-sequenceDiagram
+<Mermaid title="The SME Lot Size Illiquidity Lock: Why Capital Becomes Trapped">
+{`sequenceDiagram
     participant Retail as Retail Investor
     participant Exchange as SME Platform (NSE Emerge)
     participant Buyer as Secondary Market Buyer
@@ -86,9 +86,9 @@ sequenceDiagram
     Note over Retail: Stock hits 5% lower circuit for 12 consecutive sessions
     Retail->>Exchange: Submits Sell Order for 1 Lot
     Exchange-->>Retail: Order Pending (Zero Matching Bids)
-    Note over Buyer: Nobody has ₹1,20,000+ liquid risk capital to catch a falling SME knife
-    Retail->>Retail: Trapped with 100% illiquid capital
-```
+    Note over Buyer: Nobody has ₹1,20,000+ liquid risk capital to catch falling knife
+    Retail->>Retail: Trapped with 100% illiquid capital`}
+</Mermaid>
 
 When sentiment reverses and an SME stock triggers successive 5% lower circuits, the market maker's mandated quote spread widens and secondary buyers completely evaporate. A retail investor cannot liquidate a portion of their holdings to preserve capital; they must find a counterparty willing to risk the entire ₹1,00,000+ lot value in a declining micro-cap with negligible analyst coverage.
 

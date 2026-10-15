@@ -2,9 +2,9 @@
 
 **Date Tested:** 2026-10-15  
 **Target Host:** `http://localhost:4321/artha-atlas`  
-**Total Pages Audited:** 23  
-**Total KaTeX Math Formulas Rendered:** 22 (Zero errors)  
-**Total Mermaid Architectural Diagrams Rendered:** 8  
+**Total Pages Audited:** 26  
+**Total KaTeX Math Formulas Rendered:** 44 (Zero errors)  
+**Total Mermaid Architectural Diagrams Rendered:** 11  
 
 ## Detailed Page-by-Page Audit Matrix
 
@@ -33,3 +33,6 @@
 | `/blog/alternative-investments-aif-pms-private-credit-india/` | 200 | 0 | 0 | 1 | 1 | ✅ PASS |
 | `/blog/fire-financial-independence-retire-early-india-guide/` | 200 | 0 | 0 | 1 | 1 | ✅ PASS |
 | `/blog/financial-scams-fraud-laws-india-investor-protection/` | 200 | 0 | 0 | 1 | 1 | ✅ PASS |
+| `/blog/retail-derivatives-fo-trading-math-sebi-regulations/` | 200 | 13 | 0 | 1 | 1 | ✅ PASS |
+| `/blog/sovereign-gold-bonds-discontinuation-secondary-market-arbitrage/` | 200 | 9 | 0 | 1 | 1 | ✅ PASS |
+| `/blog/sme-ipo-investing-risks-rewards-india/` | 200 | 0 | 0 | 1 | 1 | ✅ PASS |

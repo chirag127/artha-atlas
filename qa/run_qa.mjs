@@ -32,7 +32,10 @@ const ROUTES = [
   '/blog/gold-and-silver-investing-india-guide/',
   '/blog/alternative-investments-aif-pms-private-credit-india/',
   '/blog/fire-financial-independence-retire-early-india-guide/',
-  '/blog/financial-scams-fraud-laws-india-investor-protection/'
+  '/blog/financial-scams-fraud-laws-india-investor-protection/',
+  '/blog/retail-derivatives-fo-trading-math-sebi-regulations/',
+  '/blog/sovereign-gold-bonds-discontinuation-secondary-market-arbitrage/',
+  '/blog/sme-ipo-investing-risks-rewards-india/'
 ];
 
 async function runQA() {

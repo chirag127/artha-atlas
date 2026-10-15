@@ -62,15 +62,15 @@ In September 2024, the Securities and Exchange Board of India (<Cite id="SEBI" l
 - The top 1% of profitable algorithmic trading entities and proprietary desks captured **over 75% of total market net profits**.
 - Transaction costs (brokerage, exchange turnover fees, GST, and STT) represented an additional **15% to 28% deadweight loss** on top of gross trading losses.
 
-```mermaid
-graph TD
-    A["Retail Trader Deposits ₹1,00,000 Capital"] --> B["High-Frequency Options Buying (ODTE / Expiry Day)"]
-    B --> C["Theta Decay (Time Value Evaporation)"]
-    B --> D["Bid-Ask Spread Slippage (1% - 3%)"]
-    B --> E["STT (0.15%) + Exchange Fees + 18% GST"]
+<Mermaid title="The Retail Derivatives Wealth Destruction Cycle">
+{`graph TD
+    A["Retail Trader Deposits ₹1,00,000 Capital"] --> B["High-Frequency Options Buying (0DTE / Expiry Day)"]
+    B --> C["Theta Decay: Time Value Evaporation"]
+    B --> D["Bid-Ask Spread Slippage: 1% to 3%"]
+    B --> E["STT: 0.15% + Exchange Fees + 18% GST"]
     C & D & E --> F["Expected Final Capital: ₹0 (Ruin in ~90 to 180 Days)"]
-    F --> G["Capital Absorbed by HFT / Algo Market Makers (75%+ of Profits)"]
-```
+    F --> G["Capital Absorbed by HFT / Algo Desks (75%+ of Profits)"]`}
+</Mermaid>
 
 ---
 
