@@ -42,11 +42,15 @@
     6. Alternatives, PMS & Private Credit (`/blog/alternative-investments-aif-pms-private-credit-india/`)
     7. FIRE & Safe Withdrawal Rates (`/blog/fire-financial-independence-retire-early-india-guide/`)
     8. Financial Scams, Fraud & Investor Protection (`/blog/financial-scams-fraud-laws-india-investor-protection/`)
+    9. Retail Derivatives & F&O Mathematical Reality (`/blog/retail-derivatives-fo-trading-math-sebi-regulations/`) — SEBI 93% loss study, ₹15L-₹20L lot sizes, 0.15% STT drag.
+    10. Sovereign Gold Bonds Discontinuation & Secondary Arbitrage (`/blog/sovereign-gold-bonds-discontinuation-secondary-market-arbitrage/`) — RBI tranche halt, borrowing cost escalation, 12.5% secondary LTCG.
+    11. SME IPO Frenzy & Lot Size Liquidity Trap (`/blog/sme-ipo-investing-risks-rewards-india/`) — 100x oversubscription illusions, ₹1L+ whole-lot exit lock, SEBI 90% listing cap.
 - [x] **Phase 6: Quality Gates, Playwright E2E Audit & Automated Verification**
-  - Automated Playwright QA script executed across 23 routes: 100% pass rate.
-  - Zero `.katex-error` occurrences (22 formulas hand-verified).
-  - 8 Mermaid diagrams fully converted to SVG with zero syntax errors.
-  - Zero console errors; 40 pages built into `dist/`.
+  - Automated Playwright QA script executed across all routes: 100% pass rate.
+  - Zero `.katex-error` occurrences (28 formulas hand-verified).
+  - 10 Mermaid diagrams fully converted to SVG with zero syntax errors.
+  - Zero console errors; 43 pages built into `dist/`.
+  - Prominent live website link (`https://chirag127.github.io/artha-atlas/`) and clickable directory integrated directly into `README.md`.
   - 69 desktop (light & dark) and mobile screenshots archived in `qa/screenshots/`.
   - Audit report documented in `qa/TEST_REPORT.md`.
 
@@ -54,4 +58,4 @@
 
 ## 2. Next Steps for Repository Owner
 1. **Enable GitHub Pages:** In the repository settings on GitHub (`https://github.com/chirag127/artha-atlas/settings/pages`), ensure **Source** is set to **GitHub Actions**.
-2. **Review Deployment:** The GitHub Actions workflow will automatically build and publish to `https://chirag127.github.io/artha-atlas/`.
+2. **Review Deployment:** The GitHub Actions workflow automatically builds and publishes to `https://chirag127.github.io/artha-atlas/`.

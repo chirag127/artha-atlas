@@ -2,9 +2,12 @@
 
 > **Every Indian investment avenue — tax, returns, risks, laws — compared honestly.**
 
+[![Live Web Application](https://img.shields.io/badge/Live%20Website-chirag127.github.io%2Fartha--atlas-2563eb?style=for-the-badge&logo=googlechrome&logoColor=white)](https://chirag127.github.io/artha-atlas/)
 [![Deploy Artha Atlas to GitHub Pages](https://github.com/chirag127/artha-atlas/actions/workflows/deploy.yml/badge.svg)](https://github.com/chirag127/artha-atlas/actions/workflows/deploy.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Verified for Indian FY 2026-27](https://img.shields.io/badge/Tax%20Rules-FY%202026--27-emerald.svg)](https://incometax.gov.in)
+
+🌐 **Official Live Platform**: [https://chirag127.github.io/artha-atlas/](https://chirag127.github.io/artha-atlas/)
 
 Artha Atlas is an encyclopedia, quant-finance comparative engine, and regulatory guide covering every major investment avenue available to Indian citizens and NRIs.
 
@@ -25,20 +28,20 @@ Most Indian finance portals suffer from one of two vices:
 
 ## 🧭 Key Features & Sections
 
-| Route | Feature | Description |
+| Live Page | Feature | Description |
 | :--- | :--- | :--- |
-| **`/`** | **Home** | The Financial Atlas dashboard, asset class risk-return frontier, and featured masterclasses. |
-| **`/start-here/`** | **The Investor Journey** | Step-by-step roadmap: Emergency fund -> Health/Term Insurance -> Asset Allocation. |
-| **`/avenues/`** | **The Avenues Directory** | Complete catalog of 40+ investment instruments grouped across 8 asset classes. |
-| **`/compare/`** | **Comparative Engine** | High-performance TanStack table comparing returns, risk tier, tax, liquidity, and ticket size. |
-| **`/allocation/`** | **Asset Allocation Lab** | Interactive allocation modeler with Monte Carlo simulations and Indian inflation glidepaths. |
-| **`/calculators/`** | **Quant Calculators** | Client-side financial calculators: SIP, SWP, XIRR, CAGR, Post-tax Yield, and Home Loan Prepay vs SIP. |
-| **`/tax/`** | **Indian Tax Centre** | FY 2026-27 capital gains rates, holding periods, grandfathering rules, and Section mappings. |
-| **`/laws-and-regulators/`** | **Statutory Hub** | Guide to SEBI, RBI, PFRDA, IRDAI, SCORES 2.0, and investor complaint mechanisms. |
-| **`/scams-and-fraud/`** | **How Money Really Works**| Anatomy of Ponzi schemes, BUDS Act 2019, front-running, and real forensic case studies. |
-| **`/books/`** | **Indian Finance Library** | Curated catalog of essential Indian and global financial literature categorized by domain. |
-| **`/glossary/`** | **Financial Dictionary** | 500+ Indian and quantitative financial terms with instant search and hover explanations. |
-| **`/about/`** | **About the Author** | Background on Chirag Singhal, editorial standards, and contact channels. |
+| [**Home Dashboard**](https://chirag127.github.io/artha-atlas/) | **Atlas Frontier** | Complete dashboard, real-return spectrum, and key metrics. |
+| [**The Investor Journey**](https://chirag127.github.io/artha-atlas/start-here/) | **Roadmap** | Sequence: Emergency fund -> Health/Term Insurance -> Asset Allocation. |
+| [**The Avenues Directory**](https://chirag127.github.io/artha-atlas/avenues/) | **Avenues Catalog** | Complete catalog of 40+ investment instruments grouped across 8 asset classes. |
+| [**Comparative Engine**](https://chirag127.github.io/artha-atlas/compare/) | **Compare Table** | Multi-column filterable comparison of returns, volatility, tax, and liquidity. |
+| [**Asset Allocation Lab**](https://chirag127.github.io/artha-atlas/allocation/) | **Portfolio Modeler** | Interactive asset allocation simulator with inflation-adjusted glidepaths. |
+| [**Quant Calculators**](https://chirag127.github.io/artha-atlas/calculators/) | **Calculator Suite** | SIP, SWP, CAGR, XIRR, Post-tax Yield, and Home Loan Prepayment vs SIP. |
+| [**Indian Tax Centre**](https://chirag127.github.io/artha-atlas/tax/) | **FY 2026-27 Tax Hub** | Capital gains rates (12.5% LTCG, 20% STCG), Section 50AA, 115BBH rules. |
+| [**Statutory Hub**](https://chirag127.github.io/artha-atlas/laws-and-regulators/) | **Legal & Regulatory** | Primary mandates: SEBI, RBI, PFRDA, IRDAI, SCORES 2.0 portal, and investor ombudsmen. |
+| [**Scams & Fraud Forensic**](https://chirag127.github.io/artha-atlas/scams-and-fraud/) | **Fraud Archive** | BUDS Act 2019, Ponzi red flags, illegal collective investment schemes, forensic breakdowns. |
+| [**Indian Finance Library**](https://chirag127.github.io/artha-atlas/books/) | **Reading Room** | Curated catalog of essential Indian and global financial literature categorized by domain. |
+| [**Financial Dictionary**](https://chirag127.github.io/artha-atlas/glossary/) | **Glossary** | 500+ Indian and quantitative financial terms with instant search and hover explanations. |
+| [**About the Author**](https://chirag127.github.io/artha-atlas/about/) | **Author Dossier** | Background on Chirag Singhal, editorial ethics, zero-affiliate pledge, and contact channels. |
 
 ---
 
